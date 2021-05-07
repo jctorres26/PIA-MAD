@@ -44,101 +44,113 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 37);
+            this.label1.Location = new System.Drawing.Point(24, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 13);
+            this.label1.Size = new System.Drawing.Size(272, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "SISTEMA DE CONSUMO ELECTRICO A.C";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 84);
+            this.label2.Location = new System.Drawing.Point(32, 103);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.Size = new System.Drawing.Size(40, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tipo ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 140);
+            this.label3.Location = new System.Drawing.Point(24, 172);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Usuario";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 187);
+            this.label4.Location = new System.Drawing.Point(36, 230);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(43, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Clave";
             // 
             // CMBL_TIPO
             // 
             this.CMBL_TIPO.FormattingEnabled = true;
-            this.CMBL_TIPO.Location = new System.Drawing.Point(69, 81);
+            this.CMBL_TIPO.Location = new System.Drawing.Point(92, 100);
+            this.CMBL_TIPO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CMBL_TIPO.Name = "CMBL_TIPO";
-            this.CMBL_TIPO.Size = new System.Drawing.Size(140, 21);
+            this.CMBL_TIPO.Size = new System.Drawing.Size(185, 24);
             this.CMBL_TIPO.TabIndex = 4;
             // 
             // TEXTL_USUARIO
             // 
-            this.TEXTL_USUARIO.Location = new System.Drawing.Point(69, 137);
+            this.TEXTL_USUARIO.Location = new System.Drawing.Point(92, 169);
+            this.TEXTL_USUARIO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TEXTL_USUARIO.Name = "TEXTL_USUARIO";
-            this.TEXTL_USUARIO.Size = new System.Drawing.Size(140, 20);
+            this.TEXTL_USUARIO.Size = new System.Drawing.Size(185, 22);
             this.TEXTL_USUARIO.TabIndex = 5;
             // 
             // TEXTL_CLAVE
             // 
-            this.TEXTL_CLAVE.Location = new System.Drawing.Point(69, 180);
+            this.TEXTL_CLAVE.Location = new System.Drawing.Point(92, 222);
+            this.TEXTL_CLAVE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TEXTL_CLAVE.Name = "TEXTL_CLAVE";
-            this.TEXTL_CLAVE.Size = new System.Drawing.Size(140, 20);
+            this.TEXTL_CLAVE.Size = new System.Drawing.Size(185, 22);
             this.TEXTL_CLAVE.TabIndex = 6;
             // 
             // DTPL_FECHA
             // 
-            this.DTPL_FECHA.Location = new System.Drawing.Point(43, 350);
+            this.DTPL_FECHA.Location = new System.Drawing.Point(57, 431);
+            this.DTPL_FECHA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DTPL_FECHA.Name = "DTPL_FECHA";
-            this.DTPL_FECHA.Size = new System.Drawing.Size(200, 20);
+            this.DTPL_FECHA.Size = new System.Drawing.Size(265, 22);
             this.DTPL_FECHA.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 356);
+            this.label5.Location = new System.Drawing.Point(0, 438);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.Size = new System.Drawing.Size(47, 17);
             this.label5.TabIndex = 8;
             this.label5.Text = "Fecha";
             // 
             // CBL_RECORDAR
             // 
             this.CBL_RECORDAR.AutoSize = true;
-            this.CBL_RECORDAR.Location = new System.Drawing.Point(69, 295);
+            this.CBL_RECORDAR.Location = new System.Drawing.Point(92, 363);
+            this.CBL_RECORDAR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CBL_RECORDAR.Name = "CBL_RECORDAR";
-            this.CBL_RECORDAR.Size = new System.Drawing.Size(126, 17);
+            this.CBL_RECORDAR.Size = new System.Drawing.Size(164, 21);
             this.CBL_RECORDAR.TabIndex = 9;
             this.CBL_RECORDAR.Text = "Recordar contraseña";
             this.CBL_RECORDAR.UseVisualStyleBackColor = true;
             // 
             // BTNL_INGRESAR
             // 
-            this.BTNL_INGRESAR.Location = new System.Drawing.Point(55, 235);
+            this.BTNL_INGRESAR.Location = new System.Drawing.Point(73, 289);
+            this.BTNL_INGRESAR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BTNL_INGRESAR.Name = "BTNL_INGRESAR";
-            this.BTNL_INGRESAR.Size = new System.Drawing.Size(152, 40);
+            this.BTNL_INGRESAR.Size = new System.Drawing.Size(203, 49);
             this.BTNL_INGRESAR.TabIndex = 10;
             this.BTNL_INGRESAR.Text = "Ingresar";
             this.BTNL_INGRESAR.UseVisualStyleBackColor = true;
+            this.BTNL_INGRESAR.Click += new System.EventHandler(this.BTNL_INGRESAR_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(255, 382);
+            this.ClientSize = new System.Drawing.Size(340, 470);
             this.Controls.Add(this.BTNL_INGRESAR);
             this.Controls.Add(this.CBL_RECORDAR);
             this.Controls.Add(this.label5);
@@ -151,6 +163,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "LOGIN";
             this.ResumeLayout(false);

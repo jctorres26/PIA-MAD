@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BD_MAD_CEE.ADMINISTRADOR;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace BD_MAD_CEE
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void BTNL_INGRESAR_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form form = new A_GESTION_EMPLEADOS();
+            form.ShowDialog();
+            this.Close();
+            
         }
     }
 }

@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,6 +65,7 @@
     <Compile Include="EMPLEADO\E_PANTALLA_PRINCIPAL.Designer.cs">
       <DependentUpon>E_PANTALLA_PRINCIPAL.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnlaceDB.cs" />
     <Compile Include="LOGIN\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

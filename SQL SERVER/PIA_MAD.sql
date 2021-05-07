@@ -1,6 +1,5 @@
 
 
-
 CREATE TABLE Administrador(
 Nombre_Usuario			VARCHAR(20) NOT NULL, 
 Contrasenia				VARCHAR (20) NOT NULL,
@@ -21,6 +20,8 @@ Activo					BIT DEFAULT 1,
 Usuario_Administrador		VARCHAR (20) NOT NULL
 PRIMARY KEY (id_Empleado)
 );
+
+SELECT * FROM Empleados;
 
 Restricciones: En el nombre y apellidos no se permitirá el ingreso de números
 
@@ -155,6 +156,10 @@ FOREIGN KEY (id_Empleado) REFERENCES Empleados(id_Empleado);
 
 ALTER TABLE Gestion_Clientes ADD CONSTRAINT FK_GESTION_CLIENTE
 FOREIGN KEY (id_Cliente) REFERENCES Clientes(id_Cliente);
+
+
+INSERT INTO Administrador (Nombre_Usuario,Contrasenia) VALUES ('admin','contra');
+SELECT * FROM Administrador;
 
 
 
