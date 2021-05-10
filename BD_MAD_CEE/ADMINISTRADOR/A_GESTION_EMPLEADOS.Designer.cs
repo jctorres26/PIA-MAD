@@ -304,6 +304,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "A_GESTION_EMPLEADOS";
             this.Text = "Gestion de Empleados";
+            this.Load += new System.EventHandler(this.A_GESTION_EMPLEADOS_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

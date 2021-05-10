@@ -2,7 +2,7 @@ USE PIA_MAD;
 
 GO
 CREATE PROCEDURE sp_Empleados(
-@opc VARCHAR(20),
+@opc VARCHAR(30),
 @id_Empleado INT = NULL,
 @Nombre VARCHAR(50) = NULL,
 @Apellido_Paterno VARCHAR(25) = NULL,

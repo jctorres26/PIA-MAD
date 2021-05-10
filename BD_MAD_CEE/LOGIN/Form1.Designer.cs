@@ -85,7 +85,7 @@
             // 
             this.CMBL_TIPO.FormattingEnabled = true;
             this.CMBL_TIPO.Location = new System.Drawing.Point(92, 100);
-            this.CMBL_TIPO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CMBL_TIPO.Margin = new System.Windows.Forms.Padding(4);
             this.CMBL_TIPO.Name = "CMBL_TIPO";
             this.CMBL_TIPO.Size = new System.Drawing.Size(185, 24);
             this.CMBL_TIPO.TabIndex = 4;
@@ -93,7 +93,7 @@
             // TEXTL_USUARIO
             // 
             this.TEXTL_USUARIO.Location = new System.Drawing.Point(92, 169);
-            this.TEXTL_USUARIO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TEXTL_USUARIO.Margin = new System.Windows.Forms.Padding(4);
             this.TEXTL_USUARIO.Name = "TEXTL_USUARIO";
             this.TEXTL_USUARIO.Size = new System.Drawing.Size(185, 22);
             this.TEXTL_USUARIO.TabIndex = 5;
@@ -101,7 +101,7 @@
             // TEXTL_CLAVE
             // 
             this.TEXTL_CLAVE.Location = new System.Drawing.Point(92, 222);
-            this.TEXTL_CLAVE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TEXTL_CLAVE.Margin = new System.Windows.Forms.Padding(4);
             this.TEXTL_CLAVE.Name = "TEXTL_CLAVE";
             this.TEXTL_CLAVE.Size = new System.Drawing.Size(185, 22);
             this.TEXTL_CLAVE.TabIndex = 6;
@@ -109,7 +109,7 @@
             // DTPL_FECHA
             // 
             this.DTPL_FECHA.Location = new System.Drawing.Point(57, 431);
-            this.DTPL_FECHA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTPL_FECHA.Margin = new System.Windows.Forms.Padding(4);
             this.DTPL_FECHA.Name = "DTPL_FECHA";
             this.DTPL_FECHA.Size = new System.Drawing.Size(265, 22);
             this.DTPL_FECHA.TabIndex = 7;
@@ -128,7 +128,7 @@
             // 
             this.CBL_RECORDAR.AutoSize = true;
             this.CBL_RECORDAR.Location = new System.Drawing.Point(92, 363);
-            this.CBL_RECORDAR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CBL_RECORDAR.Margin = new System.Windows.Forms.Padding(4);
             this.CBL_RECORDAR.Name = "CBL_RECORDAR";
             this.CBL_RECORDAR.Size = new System.Drawing.Size(164, 21);
             this.CBL_RECORDAR.TabIndex = 9;
@@ -138,7 +138,7 @@
             // BTNL_INGRESAR
             // 
             this.BTNL_INGRESAR.Location = new System.Drawing.Point(73, 289);
-            this.BTNL_INGRESAR.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BTNL_INGRESAR.Margin = new System.Windows.Forms.Padding(4);
             this.BTNL_INGRESAR.Name = "BTNL_INGRESAR";
             this.BTNL_INGRESAR.Size = new System.Drawing.Size(203, 49);
             this.BTNL_INGRESAR.TabIndex = 10;
@@ -163,9 +163,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "LOGIN";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

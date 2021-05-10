@@ -16,7 +16,24 @@ namespace BD_MAD_CEE.ADMINISTRADOR
         {
             InitializeComponent();
             
-            
+        }
+
+        private void A_GESTION_EMPLEADOS_Load(object sender, EventArgs e)
+        {
+           
+            EnlaceDB con = new EnlaceDB();
+
+            var empleados = con.sp_GetDataTable("SelectEmpleados");
+            CMBA_EMPLEADOS.DataSource = empleados;
+            CMBA_EMPLEADOS.DisplayMember = "id_Empleado";
+            DataRow[] emp = empleados.Select("id_Empleado = " + CMBA_EMPLEADOS.Text);
+            foreach(DataRow row in emp)
+            {
+                TEXTA_NOMBRES.Text = row["Nombre"].ToString();
+                DTP_FNAC.Text = row["Fecha_Nacimiento"].ToString();
+            }
+
+                        
         }
 
         private void BTNA_GUARDAR_Click(object sender, EventArgs e)
@@ -27,5 +44,7 @@ namespace BD_MAD_CEE.ADMINISTRADOR
                                 TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, "admin");
 
         }
+
+        
     }
 }

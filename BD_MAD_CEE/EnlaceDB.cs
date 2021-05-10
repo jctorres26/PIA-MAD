@@ -42,7 +42,7 @@ namespace BD_MAD_CEE
                 _comando.CommandType = CommandType.StoredProcedure;
                 _comando.CommandTimeout = 1200;
 
-                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 10);
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
                 parametro1.Value = opc;
                 var parametro2 = _comando.Parameters.Add("@id_Empleado", SqlDbType.Int);
                 parametro2.Value = id;
@@ -79,6 +79,38 @@ namespace BD_MAD_CEE
 
                 desconectar();
             }
+        }
+
+
+        public DataTable sp_GetDataTable(string opc)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_GetDataTable";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+                
+            }
+            catch(SqlException exc)
+            {
+                MessageBox.Show(exc.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return table;
         }
 
     }
