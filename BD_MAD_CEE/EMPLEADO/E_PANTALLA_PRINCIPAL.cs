@@ -17,13 +17,219 @@ namespace BD_MAD_CEE.EMPLEADO
             InitializeComponent();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private bool loaded = false;
+
+        private void E_PANTALLA_PRINCIPAL_Load(object sender, EventArgs e)
         {
+            CMBE_TIPOS.Items.Add("Domestico");
+            CMBE_TIPOS.Items.Add("Industrial");
+            CMBE_GENERO.Items.Add("Masculino");
+            CMBE_GENERO.Items.Add("Femenino");
+            LoadCombo();
+            loaded = true;
+        }
+
+
+        private void LoadCombo()
+        {
+
+       
+
+            EnlaceDB con = EnlaceDB.getInstance();
+
+            var clientes = con.sp_GetDataTable("SelectClientes");
+            CMBE_CLIENTES.DataSource = clientes;
+            CMBE_CLIENTES.DisplayMember = "Nombre";
+            CMBE_CLIENTES.ValueMember = "id_Cliente";
+            CMBE_CLIENTES.SelectedIndex = -1;
 
         }
 
-        private void label25_Click(object sender, EventArgs e)
+        private void BTNE_CNUEVO_Click(object sender, EventArgs e)
         {
+            if ((TXTE_NOMBRES.Text != "") && (TXTE_AP.Text != "") && (TXTE_AM.Text != "") && (TXTE_USUARIO.Text != "")
+               && (TXTE_CURP.Text != "") && (TXTE_EMAIL.Text != "") && (TXTE_CLAVE.Text != "") && (CMBE_GENERO.Text != "")
+               && (TXTE_ESTADO.Text != "") && (CMBE_TIPOS.Text != "") && (TXTE_CIUDAD.Text != "") && (TXTE_COLONIA.Text != "")
+               && (TXTE_CALLE.Text != "") && (TXTE_NUMCASA.Text != "") && (TXTE_CP.Text != "") && (TXTE_MEDIDOR.Text != "")
+               && CMBE_CLIENTES.SelectedIndex == -1)
+            {
+                EnlaceDB con = EnlaceDB.getInstance();
+
+                int numServ = Int32.Parse(TXTE_MEDIDOR.Text);
+                int cp = Int32.Parse(TXTE_CP.Text);
+                int numExt = Int32.Parse(TXTE_NUMCASA.Text);
+
+
+                con.sp_Clientes("Insert", 0, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
+                                    TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
+
+                con.sp_Contrato("Insert", 0, numServ, CMBE_TIPOS.Text, 0, 10023, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text, TXTE_COLONIA.Text,
+                                   TXTE_CALLE.Text, numExt);
+
+                loaded = false;
+                LimpiarCampos();
+                LoadCombo();
+                loaded = true;
+            }
+            else if (((TXTE_NOMBRES.Text == "") || (TXTE_AP.Text != "") || (TXTE_AM.Text != "") || (TXTE_USUARIO.Text != "")
+               || (TXTE_CURP.Text == "") || (TXTE_EMAIL.Text != "") && (TXTE_CLAVE.Text != "") || (CMBE_GENERO.Text != "")
+               || (TXTE_ESTADO.Text == "") || (CMBE_TIPOS.Text != "") || (TXTE_CIUDAD.Text != "") || (TXTE_COLONIA.Text != "")
+               || (TXTE_CALLE.Text != "") || (TXTE_NUMCASA.Text != "") || (TXTE_CP.Text != "") || (TXTE_MEDIDOR.Text != ""))
+               && CMBE_CLIENTES.SelectedIndex == -1) {
+
+                MessageBox.Show("Favor de llenar todos los campos.", "Gestion de Clientes", MessageBoxButtons.OK);
+            }
+
+
+            else if((TXTE_ESTADO.Text != "") && (CMBE_TIPOS.Text != "") && (TXTE_CIUDAD.Text != "") && (TXTE_COLONIA.Text != "")
+               && (TXTE_CALLE.Text != "") && (TXTE_NUMCASA.Text != "") && (TXTE_CP.Text != "") && (TXTE_MEDIDOR.Text != "")
+                && CMBE_CLIENTES.SelectedIndex != -1)
+            {
+                EnlaceDB con = EnlaceDB.getInstance();
+
+                int numServ = Int32.Parse(TXTE_MEDIDOR.Text);
+                int cp = Int32.Parse(TXTE_CP.Text);
+                int numExt = Int32.Parse(TXTE_NUMCASA.Text);
+                int idCliente = Int32.Parse(CMBE_CLIENTES.SelectedValue.ToString());
+
+                con.sp_Contrato("InsertNuevo", 0, numServ, CMBE_TIPOS.Text, idCliente, 10023, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text,
+                    TXTE_COLONIA.Text, TXTE_CALLE.Text, numExt);
+
+                loaded = false;
+                LimpiarCampos();
+                LoadCombo();
+                loaded = true;
+
+            }
+            else
+            {
+                MessageBox.Show("Favor de llenar todos los campos del contrato.", "Gestion de Clientes", MessageBoxButtons.OK);
+            }
+
+               
+           
+
+        }
+
+        private void CMBE_CLIENTES_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (loaded == true)
+            {
+
+                EnlaceDB con = EnlaceDB.getInstance();
+
+                var clientes = con.sp_GetDataTable("SelectClientes");
+                DataRow[] cliente = clientes.Select("id_Cliente = " + CMBE_CLIENTES.SelectedValue);
+                TXTE_NOMBRES.Text = cliente[0]["Nombre"].ToString();
+                TXTE_AP.Text = cliente[0]["Apellido_Paterno"].ToString();
+                TXTE_AM.Text = cliente[0]["Apellido_Materno"].ToString();
+                TXTE_CURP.Text = cliente[0]["CURP"].ToString();
+                TXTE_EMAIL.Text = cliente[0]["Email"].ToString();
+                TXTE_USUARIO.Text = cliente[0]["Nombre_Usuario"].ToString();
+                TXTE_CLAVE.Text = cliente[0]["Contrasenia"].ToString();
+                DTPE_FNAC.Text = cliente[0]["Fecha_Nacimiento"].ToString();
+                if (cliente[0]["Genero"].ToString() == "Masculino")
+                {
+                    CMBE_GENERO.SelectedIndex = 0;
+                }
+                else
+                {
+                    CMBE_GENERO.SelectedIndex = 1;
+                }
+
+
+            }
+
+        }
+
+        private void LimpiarCampos()
+        {
+            CMBE_CLIENTES.SelectedIndex = -1;
+            CMBE_TIPOS.SelectedIndex = -1;
+            CMBE_GENERO.SelectedIndex = -1;
+            TXTE_NOMBRES.Text = "";
+            TXTE_AP.Text = "";
+            TXTE_AM.Text = "";
+            TXTE_CURP.Text = "";
+            TXTE_EMAIL.Text = "";
+            TXTE_USUARIO.Text = "";
+            TXTE_CLAVE.Text = "";
+            TXTE_ESTADO.Text = "";
+            TXTE_CIUDAD.Text = "";
+            TXTE_COLONIA.Text = "";
+            TXTE_CALLE.Text = "";
+            TXTE_NUMCASA.Text = "";
+            TXTE_CP.Text = "";
+            TXTE_MEDIDOR.Text = "";
+
+        }
+
+        private void BTNE_LIMPIAR_Click(object sender, EventArgs e)
+        {
+            loaded = false;
+            LimpiarCampos();
+            loaded = true;
+        }
+
+        private void BTNE_REESTABLCER_Click(object sender, EventArgs e)
+        {
+
+            if (CMBE_CLIENTES.SelectedIndex != -1)
+            {
+                EnlaceDB con = EnlaceDB.getInstance();
+                int idCliente = Int32.Parse(CMBE_CLIENTES.SelectedValue.ToString());
+
+                con.sp_Clientes("Restablecer", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
+                                        TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
+            }
+            
+        }
+
+        private void BTNE_BAJA_Click(object sender, EventArgs e)
+        {
+            if (CMBE_CLIENTES.SelectedIndex != -1)
+            {
+                EnlaceDB con = EnlaceDB.getInstance();
+                int idCliente = Int32.Parse(CMBE_CLIENTES.SelectedValue.ToString());
+
+                con.sp_Clientes("Delete", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
+                                        TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
+
+
+                loaded = false;
+                LimpiarCampos();
+                LoadCombo();
+                loaded = true;
+            }
+
+            
+        }
+
+        private void BTNE_ACTUALIZAR_Click(object sender, EventArgs e)
+        {
+            if (CMBE_CLIENTES.SelectedIndex != -1)
+            {
+                if ((TXTE_NOMBRES.Text != "") && (TXTE_AP.Text != "") && (TXTE_AM.Text != "") && (TXTE_USUARIO.Text != "")
+               && (TXTE_CURP.Text != "") && (TXTE_EMAIL.Text != "") && (TXTE_CLAVE.Text != "") && (CMBE_GENERO.Text != ""))
+                {
+                    EnlaceDB con = EnlaceDB.getInstance();
+                    int idCliente = Int32.Parse(CMBE_CLIENTES.SelectedValue.ToString());
+
+                    con.sp_Clientes("Update", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
+                                            TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
+
+                    loaded = false;
+                    LimpiarCampos();
+                    LoadCombo();
+                    loaded = true;
+                }
+                else
+                {
+                    MessageBox.Show("Favor de llenar todos los campos del cliente", "Gestion de Clientes", MessageBoxButtons.OK);
+                }
+
+
+            }
 
         }
     }

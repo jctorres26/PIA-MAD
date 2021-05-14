@@ -17,6 +17,7 @@ RFC					VARCHAR (13) UNIQUE,
 CURP					VARCHAR (18) UNIQUE, 
 Fecha_Nacimiento			DATE, 
 Activo					BIT DEFAULT 1, 
+Eliminado				BIT DEFAULT 0,
 Usuario_Administrador		VARCHAR (20) NOT NULL
 PRIMARY KEY (id_Empleado)
 );
@@ -37,6 +38,7 @@ Genero					VARCHAR (10) NOT NULL,
 CURP					VARCHAR (18) NOT NULL UNIQUE, 
 Fecha_Nacimiento			DATE,	 
 Activo					BIT DEFAULT 1,
+Eliminado				BIT DEFAULT 0,
 PRIMARY KEY (id_Cliente)
 );
 Restricciones: En el nombre y apellidos no se permitirá el ingreso de números
@@ -160,6 +162,7 @@ FOREIGN KEY (id_Cliente) REFERENCES Clientes(id_Cliente);
 
 INSERT INTO Administrador (Nombre_Usuario,Contrasenia) VALUES ('admin','contra');
 SELECT * FROM Administrador;
+
 
 
 

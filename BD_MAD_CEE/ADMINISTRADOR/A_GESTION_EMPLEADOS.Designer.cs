@@ -51,6 +51,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BTNA_REESTABLECER = new System.Windows.Forms.Button();
+            this.BTNA_LIMPIAR = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -67,12 +68,14 @@
             // 
             // CMBA_EMPLEADOS
             // 
+            this.CMBA_EMPLEADOS.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBA_EMPLEADOS.FormattingEnabled = true;
             this.CMBA_EMPLEADOS.Location = new System.Drawing.Point(28, 68);
             this.CMBA_EMPLEADOS.Margin = new System.Windows.Forms.Padding(4);
             this.CMBA_EMPLEADOS.Name = "CMBA_EMPLEADOS";
             this.CMBA_EMPLEADOS.Size = new System.Drawing.Size(197, 24);
             this.CMBA_EMPLEADOS.TabIndex = 1;
+            this.CMBA_EMPLEADOS.SelectedIndexChanged += new System.EventHandler(this.CMBA_EMPLEADOS_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -143,9 +146,12 @@
             this.DTP_FNAC.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTP_FNAC.Location = new System.Drawing.Point(167, 267);
             this.DTP_FNAC.Margin = new System.Windows.Forms.Padding(4);
+            this.DTP_FNAC.MaxDate = new System.DateTime(2003, 12, 31, 0, 0, 0, 0);
+            this.DTP_FNAC.MinDate = new System.DateTime(1910, 1, 1, 0, 0, 0, 0);
             this.DTP_FNAC.Name = "DTP_FNAC";
             this.DTP_FNAC.Size = new System.Drawing.Size(288, 22);
             this.DTP_FNAC.TabIndex = 10;
+            this.DTP_FNAC.Value = new System.DateTime(2003, 12, 31, 0, 0, 0, 0);
             // 
             // label7
             // 
@@ -239,6 +245,7 @@
             this.BTNA_BORRAR.TabIndex = 23;
             this.BTNA_BORRAR.Text = "Borrar";
             this.BTNA_BORRAR.UseVisualStyleBackColor = true;
+            this.BTNA_BORRAR.Click += new System.EventHandler(this.BTNA_BORRAR_Click);
             // 
             // groupBox1
             // 
@@ -289,12 +296,25 @@
             this.BTNA_REESTABLECER.TabIndex = 26;
             this.BTNA_REESTABLECER.Text = "RESTABLECER USUARIO";
             this.BTNA_REESTABLECER.UseVisualStyleBackColor = false;
+            this.BTNA_REESTABLECER.Click += new System.EventHandler(this.BTNA_REESTABLECER_Click);
+            // 
+            // BTNA_LIMPIAR
+            // 
+            this.BTNA_LIMPIAR.Location = new System.Drawing.Point(824, 202);
+            this.BTNA_LIMPIAR.Margin = new System.Windows.Forms.Padding(4);
+            this.BTNA_LIMPIAR.Name = "BTNA_LIMPIAR";
+            this.BTNA_LIMPIAR.Size = new System.Drawing.Size(175, 63);
+            this.BTNA_LIMPIAR.TabIndex = 26;
+            this.BTNA_LIMPIAR.Text = "Limpiar Campos";
+            this.BTNA_LIMPIAR.UseVisualStyleBackColor = true;
+            this.BTNA_LIMPIAR.Click += new System.EventHandler(this.BTNA_LIMPIAR_Click);
             // 
             // A_GESTION_EMPLEADOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.BTNA_LIMPIAR);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BTNA_BORRAR);
@@ -339,5 +359,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BTNA_REESTABLECER;
+        private System.Windows.Forms.Button BTNA_LIMPIAR;
     }
 }
