@@ -15,10 +15,16 @@ namespace BD_MAD_CEE.ADMINISTRADOR
     {
         private bool loaded = false;
 
-        public A_GESTION_EMPLEADOS()
+        public A_GESTION_EMPLEADOS(string adm)
         {
             InitializeComponent();
-            
+            adminActual = adm;
+        }
+
+        string adminActual;
+        private void A_GESTION_EMPLEADOS_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private void A_GESTION_EMPLEADOS_Load(object sender, EventArgs e)
@@ -49,13 +55,13 @@ namespace BD_MAD_CEE.ADMINISTRADOR
                 if (CMBA_EMPLEADOS.SelectedIndex == -1)
                 {
                     con.sp_Empleados("Insert", 0, TEXTA_NOMBRES.Text, TEXTA_AP.Text, TEXTA_AM.Text, TEXTA_USUARIO.Text, TEXTA_CLAVE.Text,
-                                        TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 0, "admin");
+                                        TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 0, adminActual);
                 }
                 else
                 {
                     int id = Int32.Parse(CMBA_EMPLEADOS.SelectedValue.ToString());
                     con.sp_Empleados("Update", id, TEXTA_NOMBRES.Text, TEXTA_AP.Text, TEXTA_AM.Text, TEXTA_USUARIO.Text, TEXTA_CLAVE.Text,
-                                        TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 0, "admin");
+                                        TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 0, adminActual);
 
                 }
 
@@ -78,7 +84,7 @@ namespace BD_MAD_CEE.ADMINISTRADOR
                 EnlaceDB con = EnlaceDB.getInstance();
                 int id = Int32.Parse(CMBA_EMPLEADOS.SelectedValue.ToString());
                 con.sp_Empleados("Delete", id, TEXTA_NOMBRES.Text, TEXTA_AP.Text, TEXTA_AM.Text, TEXTA_USUARIO.Text, TEXTA_CLAVE.Text,
-                                    TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 1, "admin");
+                                    TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 1, adminActual);
                 
             }
             loaded = false;
@@ -139,10 +145,12 @@ namespace BD_MAD_CEE.ADMINISTRADOR
                 EnlaceDB con = EnlaceDB.getInstance();
                 int id = Int32.Parse(CMBA_EMPLEADOS.SelectedValue.ToString());
                 con.sp_Empleados("Restablecer", id, TEXTA_NOMBRES.Text, TEXTA_AP.Text, TEXTA_AM.Text, TEXTA_USUARIO.Text, TEXTA_CLAVE.Text,
-                                    TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 1, "admin");
+                                    TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 1, adminActual);
 
             }
 
         }
+
+        
     }
 }

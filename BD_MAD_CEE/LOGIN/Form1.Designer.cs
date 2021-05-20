@@ -35,8 +35,6 @@
             this.CMBL_TIPO = new System.Windows.Forms.ComboBox();
             this.TEXTL_USUARIO = new System.Windows.Forms.TextBox();
             this.TEXTL_CLAVE = new System.Windows.Forms.TextBox();
-            this.DTPL_FECHA = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
             this.CBL_RECORDAR = new System.Windows.Forms.CheckBox();
             this.BTNL_INGRESAR = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -105,24 +103,7 @@
             this.TEXTL_CLAVE.Name = "TEXTL_CLAVE";
             this.TEXTL_CLAVE.Size = new System.Drawing.Size(185, 22);
             this.TEXTL_CLAVE.TabIndex = 6;
-            // 
-            // DTPL_FECHA
-            // 
-            this.DTPL_FECHA.Location = new System.Drawing.Point(57, 431);
-            this.DTPL_FECHA.Margin = new System.Windows.Forms.Padding(4);
-            this.DTPL_FECHA.Name = "DTPL_FECHA";
-            this.DTPL_FECHA.Size = new System.Drawing.Size(265, 22);
-            this.DTPL_FECHA.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 438);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 17);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Fecha";
+            this.TEXTL_CLAVE.UseSystemPasswordChar = true;
             // 
             // CBL_RECORDAR
             // 
@@ -153,8 +134,6 @@
             this.ClientSize = new System.Drawing.Size(340, 470);
             this.Controls.Add(this.BTNL_INGRESAR);
             this.Controls.Add(this.CBL_RECORDAR);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.DTPL_FECHA);
             this.Controls.Add(this.TEXTL_CLAVE);
             this.Controls.Add(this.TEXTL_USUARIO);
             this.Controls.Add(this.CMBL_TIPO);
@@ -181,8 +160,6 @@
         private System.Windows.Forms.ComboBox CMBL_TIPO;
         private System.Windows.Forms.TextBox TEXTL_USUARIO;
         private System.Windows.Forms.TextBox TEXTL_CLAVE;
-        private System.Windows.Forms.DateTimePicker DTPL_FECHA;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox CBL_RECORDAR;
         private System.Windows.Forms.Button BTNL_INGRESAR;
     }

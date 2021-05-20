@@ -84,7 +84,9 @@ namespace BD_MAD_CEE
             }
             catch (SqlException exc)
             {
-                MessageBox.Show(exc.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
@@ -92,10 +94,11 @@ namespace BD_MAD_CEE
             }
         }
 
-        public void sp_Clientes(string opc, int id, string nombre, string apellidoP, string apellidoM, string nombreUsuario,
+        public bool sp_Clientes(string opc, int id, string nombre, string apellidoP, string apellidoM, string nombreUsuario,
                       string contrasenia, string email, string genero, string CURP, string fechaNac, int activo, 
                       int eliminado)
         {
+            bool agregado = true;
             try
             {
                 conectar();
@@ -136,19 +139,23 @@ namespace BD_MAD_CEE
             }
             catch (SqlException exc)
             {
-                MessageBox.Show(exc.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                agregado = false;
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
                 desconectar();
             }
-
+            return agregado;
         }
 
 
-        public void sp_Contrato(string opc, int numServ, int numMed, string tipoServ, int idCliente, int idEmpleado, int CP,
+        public bool sp_Contrato(string opc, int numServ, int numMed, string tipoServ, int idCliente, int idEmpleado, int CP,
                         string estado, string ciudad, string colonia, string calle, int numExt)
         {
+            bool agregado = true;
             try
             {
                 conectar();
@@ -188,13 +195,16 @@ namespace BD_MAD_CEE
             }
             catch (SqlException exc)
             {
-                MessageBox.Show(exc.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                agregado = false;
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             finally
             {
                 desconectar();
             }
-
+            return agregado;
         }
 
 
@@ -219,7 +229,10 @@ namespace BD_MAD_CEE
             }
             catch(SqlException exc)
             {
-                MessageBox.Show(exc.Message, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
             }
             finally
             {
@@ -227,6 +240,75 @@ namespace BD_MAD_CEE
             }
 
             return table;
+        }
+
+
+
+        public DataTable sp_Admin(string opc)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_Admin";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return table;
+        }
+
+        public void sp_GestionClientes(string opc, int idEmpleado, int idCliente)
+        {
+            try
+            {
+                conectar();
+                string qry = "sp_GestionClientes";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@id_Empleado", SqlDbType.Int);
+                parametro2.Value = idEmpleado;
+                var parametro3 = _comando.Parameters.Add("@id_Cliente", SqlDbType.Int);
+                parametro3.Value = idCliente;
+
+                _adaptador.InsertCommand = _comando;
+                _comando.ExecuteNonQuery();
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
         }
 
     }

@@ -12,9 +12,16 @@ namespace BD_MAD_CEE.CLIENTE
 {
     public partial class C_CLIENTES : Form
     {
-        public C_CLIENTES()
+        public C_CLIENTES(int id)
         {
             InitializeComponent();
+            idClienteActual = id;
+        }
+
+        private int idClienteActual;
+        private void C_CLIENTES_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

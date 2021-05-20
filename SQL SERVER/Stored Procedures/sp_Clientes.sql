@@ -39,7 +39,7 @@ END
 IF @Opc = 'Delete'
 BEGIN
 
-UPDATE Clientes SET Eliminado = 1 WHERE id_Cliente = @id_Cliente;
+DELETE FROM Clientes WHERE id_Cliente = @id_Cliente;
 
 END
 
@@ -51,10 +51,22 @@ UPDATE Clientes SET Activo = 1 WHERE id_Cliente = @id_Cliente;
 END
 
 
+IF @Opc = 'Suspender'
+BEGIN
+
+UPDATE Clientes SET Activo = 0 WHERE Nombre_Usuario = @Nombre_Usuario;
+
+END
+
+
 END
 
 SELECT * FROM Clientes;
 SELECT TOP 1 id_Cliente FROM Clientes ORDER BY id_Cliente DESC;
 UPDATE Clientes SET Activo =0;
-UPDATE Clientes SET Eliminado =0;
+UPDATE Clientes SET Eliminado =1 WHERE id_Cliente = 10001;
 
+DELETE FROM Clientes WHERE id_Cliente = 10011;
+
+DISABLE TRIGGER tr_DeleteCliente ON Clientes;
+ENABLE TRIGGER tr_DeleteCliente ON Clientes;

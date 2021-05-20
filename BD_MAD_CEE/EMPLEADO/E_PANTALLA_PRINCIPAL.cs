@@ -8,16 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace BD_MAD_CEE.EMPLEADO
 {
-    public partial class E_PANTALLA_PRINCIPAL : Form
+    public partial class E_PANTALLA_PRINCIPAL : Form 
     {
-        public E_PANTALLA_PRINCIPAL()
+        public E_PANTALLA_PRINCIPAL(int id)
         {
             InitializeComponent();
+            idEmpleadoActual = id;
+        }
+
+        private void E_PANTALLA_PRINCIPAL_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
 
         private bool loaded = false;
+        private int  idEmpleadoActual;
+        private DataTable clientes;
+       
 
         private void E_PANTALLA_PRINCIPAL_Load(object sender, EventArgs e)
         {
@@ -33,11 +43,9 @@ namespace BD_MAD_CEE.EMPLEADO
         private void LoadCombo()
         {
 
-       
-
             EnlaceDB con = EnlaceDB.getInstance();
 
-            var clientes = con.sp_GetDataTable("SelectClientes");
+            clientes = con.sp_GetDataTable("SelectClientes");
             CMBE_CLIENTES.DataSource = clientes;
             CMBE_CLIENTES.DisplayMember = "Nombre";
             CMBE_CLIENTES.ValueMember = "id_Cliente";
@@ -58,18 +66,33 @@ namespace BD_MAD_CEE.EMPLEADO
                 int numServ = Int32.Parse(TXTE_MEDIDOR.Text);
                 int cp = Int32.Parse(TXTE_CP.Text);
                 int numExt = Int32.Parse(TXTE_NUMCASA.Text);
+                
 
 
-                con.sp_Clientes("Insert", 0, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
+                bool bCliente = con.sp_Clientes("Insert", 0, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
                                     TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
 
-                con.sp_Contrato("Insert", 0, numServ, CMBE_TIPOS.Text, 0, 10023, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text, TXTE_COLONIA.Text,
+                bool bContrato = con.sp_Contrato("Insert", 0, numServ, CMBE_TIPOS.Text, 0, idEmpleadoActual, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text, TXTE_COLONIA.Text,
                                    TXTE_CALLE.Text, numExt);
+
+                string usuarioCliente = TXTE_USUARIO.Text;
 
                 loaded = false;
                 LimpiarCampos();
                 LoadCombo();
                 loaded = true;
+
+                if (bCliente == true && bContrato == true)
+                {
+                    foreach (DataRow row in clientes.Rows)
+                    {
+                        if (usuarioCliente == row["Nombre_Usuario"].ToString())
+                        {
+                            int idCliente = Int32.Parse(row["id_Cliente"].ToString());
+                            con.sp_GestionClientes("Alta", idEmpleadoActual, idCliente);
+                        }
+                    }
+                }
             }
             else if (((TXTE_NOMBRES.Text == "") || (TXTE_AP.Text != "") || (TXTE_AM.Text != "") || (TXTE_USUARIO.Text != "")
                || (TXTE_CURP.Text == "") || (TXTE_EMAIL.Text != "") && (TXTE_CLAVE.Text != "") || (CMBE_GENERO.Text != "")
@@ -92,7 +115,7 @@ namespace BD_MAD_CEE.EMPLEADO
                 int numExt = Int32.Parse(TXTE_NUMCASA.Text);
                 int idCliente = Int32.Parse(CMBE_CLIENTES.SelectedValue.ToString());
 
-                con.sp_Contrato("InsertNuevo", 0, numServ, CMBE_TIPOS.Text, idCliente, 10023, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text,
+                con.sp_Contrato("InsertNuevo", 0, numServ, CMBE_TIPOS.Text, idCliente, idEmpleadoActual, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text,
                     TXTE_COLONIA.Text, TXTE_CALLE.Text, numExt);
 
                 loaded = false;
@@ -118,7 +141,7 @@ namespace BD_MAD_CEE.EMPLEADO
 
                 EnlaceDB con = EnlaceDB.getInstance();
 
-                var clientes = con.sp_GetDataTable("SelectClientes");
+                clientes = con.sp_GetDataTable("SelectClientes");
                 DataRow[] cliente = clientes.Select("id_Cliente = " + CMBE_CLIENTES.SelectedValue);
                 TXTE_NOMBRES.Text = cliente[0]["Nombre"].ToString();
                 TXTE_AP.Text = cliente[0]["Apellido_Paterno"].ToString();
@@ -215,13 +238,20 @@ namespace BD_MAD_CEE.EMPLEADO
                     EnlaceDB con = EnlaceDB.getInstance();
                     int idCliente = Int32.Parse(CMBE_CLIENTES.SelectedValue.ToString());
 
-                    con.sp_Clientes("Update", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
+                   bool bCliente= con.sp_Clientes("Update", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
                                             TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
 
                     loaded = false;
                     LimpiarCampos();
                     LoadCombo();
                     loaded = true;
+
+                    if (bCliente == true)
+                    {
+                        con.sp_GestionClientes("Cambio", idEmpleadoActual, idCliente);
+
+                    }
+
                 }
                 else
                 {
@@ -232,5 +262,7 @@ namespace BD_MAD_CEE.EMPLEADO
             }
 
         }
+
+        
     }
 }

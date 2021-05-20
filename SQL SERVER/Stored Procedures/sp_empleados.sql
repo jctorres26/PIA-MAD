@@ -38,7 +38,7 @@ END
 IF @Opc = 'Delete'
 BEGIN
 
-UPDATE Empleados SET Eliminado = 1 WHERE id_Empleado = @id_Empleado;
+DELETE FROM Empleados  WHERE id_Empleado = @id_Empleado;
 
 END
 
@@ -49,6 +49,14 @@ UPDATE Empleados SET Activo = 1 WHERE id_Empleado = @id_Empleado;
 
 END
 
+
+IF @Opc = 'Suspender'
+BEGIN
+
+UPDATE Empleados SET Activo = 0 WHERE Nombre_Usuario = @Nombre_Usuario;
+
+END
+
 END
 GO
 
@@ -56,5 +64,11 @@ GO
 SELECT * FROM Empleados;
 DELETE FROM Empleados;
 UPDATE Empleados SET Eliminado = 0;
-UPDATE Empleados SET Activo = 0;
+UPDATE Empleados SET Activo = 1;
 
+DELETE Empleados WHERE id_Empleado = 10022;
+
+UPDATE Empleados SET Activo = 0 WHERE Nombre_Usuario = 'c';
+UPDATE Empleados SET Eliminado = 1 WHERE Nombre_Usuario = 'chuck';
+
+SELECT * FROM Contrato_Servicio;

@@ -23,6 +23,21 @@ Genero, CURP, Fecha_Nacimiento FROM Clientes WHERE Eliminado = 0;
 END
 
 
+IF @Opc = 'SelectUsuariosEmpleados'
+BEGIN
+
+SELECT id_Empleado, Nombre_Usuario, Contrasenia FROM Empleados WHERE Eliminado = 0 AND Activo = 1;
+
+END
+
+IF @Opc = 'SelectUsuariosClientes'
+BEGIN
+
+SELECT id_Cliente, Nombre_Usuario, Contrasenia FROM Clientes WHERE Eliminado = 0 AND Activo = 1;
+
+END
+
+
 END
 GO
 

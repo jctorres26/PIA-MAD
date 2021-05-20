@@ -47,10 +47,11 @@ Restricciones: En el nombre y apellidos no se permitirá el ingreso de números
 CREATE TABLE Gestion_Clientes(
 id_Empleado				INT NOT NULL, 
 id_Cliente				INT NOT NULL, 
-Fecha_alta				DATE, 
-Fecha_modificacion			DATE,
-PRIMARY KEY (id_Empleado, id_Cliente)
+Fecha_alta				DATETIME , 
+Fecha_modificacion			DATETIME ,
+PRIMARY KEY (id_Empleado, id_Cliente, Fecha_alta, Fecha_modificacion)
 );
+
 
 
 CREATE TABLE Contrato_Servicio(

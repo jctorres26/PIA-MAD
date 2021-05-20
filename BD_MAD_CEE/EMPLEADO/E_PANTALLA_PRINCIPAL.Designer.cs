@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.BTNE_LIMPIAR = new System.Windows.Forms.Button();
             this.BTNE_ACTUALIZAR = new System.Windows.Forms.Button();
             this.BTNE_CNUEVO = new System.Windows.Forms.Button();
             this.BTNE_BAJA = new System.Windows.Forms.Button();
@@ -177,7 +178,6 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.CMBE_RMES = new System.Windows.Forms.ComboBox();
-            this.BTNE_LIMPIAR = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -233,6 +233,17 @@
             this.tabPage1.Size = new System.Drawing.Size(1281, 551);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
+            // 
+            // BTNE_LIMPIAR
+            // 
+            this.BTNE_LIMPIAR.Location = new System.Drawing.Point(1059, 473);
+            this.BTNE_LIMPIAR.Margin = new System.Windows.Forms.Padding(4);
+            this.BTNE_LIMPIAR.Name = "BTNE_LIMPIAR";
+            this.BTNE_LIMPIAR.Size = new System.Drawing.Size(157, 49);
+            this.BTNE_LIMPIAR.TabIndex = 10;
+            this.BTNE_LIMPIAR.Text = "Limpiar campos";
+            this.BTNE_LIMPIAR.UseVisualStyleBackColor = true;
+            this.BTNE_LIMPIAR.Click += new System.EventHandler(this.BTNE_LIMPIAR_Click);
             // 
             // BTNE_ACTUALIZAR
             // 
@@ -1742,17 +1753,6 @@
             this.CMBE_RMES.Size = new System.Drawing.Size(160, 24);
             this.CMBE_RMES.TabIndex = 4;
             // 
-            // BTNE_LIMPIAR
-            // 
-            this.BTNE_LIMPIAR.Location = new System.Drawing.Point(1059, 473);
-            this.BTNE_LIMPIAR.Margin = new System.Windows.Forms.Padding(4);
-            this.BTNE_LIMPIAR.Name = "BTNE_LIMPIAR";
-            this.BTNE_LIMPIAR.Size = new System.Drawing.Size(157, 49);
-            this.BTNE_LIMPIAR.TabIndex = 10;
-            this.BTNE_LIMPIAR.Text = "Limpiar campos";
-            this.BTNE_LIMPIAR.UseVisualStyleBackColor = true;
-            this.BTNE_LIMPIAR.Click += new System.EventHandler(this.BTNE_LIMPIAR_Click);
-            // 
             // E_PANTALLA_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1763,6 +1763,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "E_PANTALLA_PRINCIPAL";
             this.Text = "SISTEMA EMPLEADO";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.E_PANTALLA_PRINCIPAL_FormClosed);
             this.Load += new System.EventHandler(this.E_PANTALLA_PRINCIPAL_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
