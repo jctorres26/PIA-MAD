@@ -81,23 +81,19 @@
             this.BTNE_ARCHIVOC = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.BTNE_CCONSUMO = new System.Windows.Forms.Button();
-            this.TXTE_CONSUMOKWH = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.TXTE_CMEDIDOR = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.NUDE_TBASICA = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_TCANIO = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_TCMES = new System.Windows.Forms.NumericUpDown();
             this.BTNE_ARCHIVOT = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.BTNE_CTARIFA = new System.Windows.Forms.Button();
-            this.TXTE_TEXC = new System.Windows.Forms.TextBox();
-            this.TXTE_TINT = new System.Windows.Forms.TextBox();
-            this.TXTE_TBASICA = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.CMBE_TCANIO = new System.Windows.Forms.ComboBox();
-            this.CMBE_TCMES = new System.Windows.Forms.ComboBox();
             this.CMBE_TCSERVICIO = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -178,6 +174,10 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.CMBE_RMES = new System.Windows.Forms.ComboBox();
+            this.NUDE_TINT = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_TEXC = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_CONSUMOKWH = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_CMEDIDOR = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -185,6 +185,9 @@
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TBASICA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCANIO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCMES)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTEG)).BeginInit();
             this.tabPage4.SuspendLayout();
@@ -197,6 +200,10 @@
             this.tabPage6.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TINT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TEXC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CONSUMOKWH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CMEDIDOR)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -717,14 +724,14 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.NUDE_CMEDIDOR);
+            this.groupBox4.Controls.Add(this.NUDE_CONSUMOKWH);
             this.groupBox4.Controls.Add(this.DTPE_FECHACONSUMO);
             this.groupBox4.Controls.Add(this.BTNE_ARCHIVOC);
             this.groupBox4.Controls.Add(this.label30);
             this.groupBox4.Controls.Add(this.BTNE_CCONSUMO);
-            this.groupBox4.Controls.Add(this.TXTE_CONSUMOKWH);
             this.groupBox4.Controls.Add(this.label29);
             this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Controls.Add(this.TXTE_CMEDIDOR);
             this.groupBox4.Controls.Add(this.label28);
             this.groupBox4.Location = new System.Drawing.Point(647, 7);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
@@ -737,8 +744,11 @@
             // 
             // DTPE_FECHACONSUMO
             // 
+            this.DTPE_FECHACONSUMO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTPE_FECHACONSUMO.Location = new System.Drawing.Point(268, 64);
             this.DTPE_FECHACONSUMO.Margin = new System.Windows.Forms.Padding(4);
+            this.DTPE_FECHACONSUMO.MaxDate = new System.DateTime(2021, 12, 31, 0, 0, 0, 0);
+            this.DTPE_FECHACONSUMO.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.DTPE_FECHACONSUMO.Name = "DTPE_FECHACONSUMO";
             this.DTPE_FECHACONSUMO.Size = new System.Drawing.Size(265, 22);
             this.DTPE_FECHACONSUMO.TabIndex = 15;
@@ -773,14 +783,7 @@
             this.BTNE_CCONSUMO.TabIndex = 12;
             this.BTNE_CCONSUMO.Text = "Cargar consumo";
             this.BTNE_CCONSUMO.UseVisualStyleBackColor = true;
-            // 
-            // TXTE_CONSUMOKWH
-            // 
-            this.TXTE_CONSUMOKWH.Location = new System.Drawing.Point(33, 170);
-            this.TXTE_CONSUMOKWH.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_CONSUMOKWH.Name = "TXTE_CONSUMOKWH";
-            this.TXTE_CONSUMOKWH.Size = new System.Drawing.Size(211, 22);
-            this.TXTE_CONSUMOKWH.TabIndex = 11;
+            this.BTNE_CCONSUMO.Click += new System.EventHandler(this.BTNE_CCONSUMO_Click);
             // 
             // label29
             // 
@@ -802,14 +805,6 @@
             this.label33.TabIndex = 6;
             this.label33.Text = "Fecha";
             // 
-            // TXTE_CMEDIDOR
-            // 
-            this.TXTE_CMEDIDOR.Location = new System.Drawing.Point(33, 64);
-            this.TXTE_CMEDIDOR.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_CMEDIDOR.Name = "TXTE_CMEDIDOR";
-            this.TXTE_CMEDIDOR.Size = new System.Drawing.Size(211, 22);
-            this.TXTE_CMEDIDOR.TabIndex = 1;
-            // 
             // label28
             // 
             this.label28.AutoSize = true;
@@ -823,17 +818,17 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox3.Controls.Add(this.NUDE_TEXC);
+            this.groupBox3.Controls.Add(this.NUDE_TINT);
+            this.groupBox3.Controls.Add(this.NUDE_TBASICA);
+            this.groupBox3.Controls.Add(this.NUDE_TCANIO);
+            this.groupBox3.Controls.Add(this.NUDE_TCMES);
             this.groupBox3.Controls.Add(this.BTNE_ARCHIVOT);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.BTNE_CTARIFA);
-            this.groupBox3.Controls.Add(this.TXTE_TEXC);
-            this.groupBox3.Controls.Add(this.TXTE_TINT);
-            this.groupBox3.Controls.Add(this.TXTE_TBASICA);
             this.groupBox3.Controls.Add(this.label25);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.CMBE_TCANIO);
-            this.groupBox3.Controls.Add(this.CMBE_TCMES);
             this.groupBox3.Controls.Add(this.CMBE_TCSERVICIO);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label21);
@@ -846,6 +841,68 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Carga de tarifas";
+            // 
+            // NUDE_TBASICA
+            // 
+            this.NUDE_TBASICA.DecimalPlaces = 2;
+            this.NUDE_TBASICA.Location = new System.Drawing.Point(32, 171);
+            this.NUDE_TBASICA.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.NUDE_TBASICA.Name = "NUDE_TBASICA";
+            this.NUDE_TBASICA.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_TBASICA.TabIndex = 17;
+            this.NUDE_TBASICA.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            // 
+            // NUDE_TCANIO
+            // 
+            this.NUDE_TCANIO.Location = new System.Drawing.Point(422, 67);
+            this.NUDE_TCANIO.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.NUDE_TCANIO.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUDE_TCANIO.Name = "NUDE_TCANIO";
+            this.NUDE_TCANIO.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_TCANIO.TabIndex = 16;
+            this.NUDE_TCANIO.Value = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            // 
+            // NUDE_TCMES
+            // 
+            this.NUDE_TCMES.Location = new System.Drawing.Point(237, 67);
+            this.NUDE_TCMES.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.NUDE_TCMES.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_TCMES.Name = "NUDE_TCMES";
+            this.NUDE_TCMES.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_TCMES.TabIndex = 15;
+            this.NUDE_TCMES.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // BTNE_ARCHIVOT
             // 
@@ -877,30 +934,7 @@
             this.BTNE_CTARIFA.TabIndex = 12;
             this.BTNE_CTARIFA.Text = "Cargar tarifa";
             this.BTNE_CTARIFA.UseVisualStyleBackColor = true;
-            // 
-            // TXTE_TEXC
-            // 
-            this.TXTE_TEXC.Location = new System.Drawing.Point(423, 170);
-            this.TXTE_TEXC.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_TEXC.Name = "TXTE_TEXC";
-            this.TXTE_TEXC.Size = new System.Drawing.Size(152, 22);
-            this.TXTE_TEXC.TabIndex = 11;
-            // 
-            // TXTE_TINT
-            // 
-            this.TXTE_TINT.Location = new System.Drawing.Point(237, 170);
-            this.TXTE_TINT.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_TINT.Name = "TXTE_TINT";
-            this.TXTE_TINT.Size = new System.Drawing.Size(152, 22);
-            this.TXTE_TINT.TabIndex = 10;
-            // 
-            // TXTE_TBASICA
-            // 
-            this.TXTE_TBASICA.Location = new System.Drawing.Point(39, 170);
-            this.TXTE_TBASICA.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_TBASICA.Name = "TXTE_TBASICA";
-            this.TXTE_TBASICA.Size = new System.Drawing.Size(152, 22);
-            this.TXTE_TBASICA.TabIndex = 9;
+            this.BTNE_CTARIFA.Click += new System.EventHandler(this.BTNE_CTARIFA_Click);
             // 
             // label25
             // 
@@ -931,24 +965,6 @@
             this.label23.Size = new System.Drawing.Size(94, 17);
             this.label23.TabIndex = 6;
             this.label23.Text = "Tarifa basico ";
-            // 
-            // CMBE_TCANIO
-            // 
-            this.CMBE_TCANIO.FormattingEnabled = true;
-            this.CMBE_TCANIO.Location = new System.Drawing.Point(423, 64);
-            this.CMBE_TCANIO.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_TCANIO.Name = "CMBE_TCANIO";
-            this.CMBE_TCANIO.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_TCANIO.TabIndex = 5;
-            // 
-            // CMBE_TCMES
-            // 
-            this.CMBE_TCMES.FormattingEnabled = true;
-            this.CMBE_TCMES.Location = new System.Drawing.Point(237, 64);
-            this.CMBE_TCMES.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_TCMES.Name = "CMBE_TCMES";
-            this.CMBE_TCMES.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_TCMES.TabIndex = 4;
             // 
             // CMBE_TCSERVICIO
             // 
@@ -1753,6 +1769,86 @@
             this.CMBE_RMES.Size = new System.Drawing.Size(160, 24);
             this.CMBE_RMES.TabIndex = 4;
             // 
+            // NUDE_TINT
+            // 
+            this.NUDE_TINT.DecimalPlaces = 2;
+            this.NUDE_TINT.Location = new System.Drawing.Point(237, 171);
+            this.NUDE_TINT.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.NUDE_TINT.Name = "NUDE_TINT";
+            this.NUDE_TINT.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_TINT.TabIndex = 18;
+            this.NUDE_TINT.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            // 
+            // NUDE_TEXC
+            // 
+            this.NUDE_TEXC.DecimalPlaces = 2;
+            this.NUDE_TEXC.Location = new System.Drawing.Point(422, 171);
+            this.NUDE_TEXC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.NUDE_TEXC.Name = "NUDE_TEXC";
+            this.NUDE_TEXC.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_TEXC.TabIndex = 19;
+            this.NUDE_TEXC.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            // 
+            // NUDE_CONSUMOKWH
+            // 
+            this.NUDE_CONSUMOKWH.Location = new System.Drawing.Point(32, 171);
+            this.NUDE_CONSUMOKWH.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.NUDE_CONSUMOKWH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_CONSUMOKWH.Name = "NUDE_CONSUMOKWH";
+            this.NUDE_CONSUMOKWH.Size = new System.Drawing.Size(212, 22);
+            this.NUDE_CONSUMOKWH.TabIndex = 16;
+            this.NUDE_CONSUMOKWH.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // NUDE_CMEDIDOR
+            // 
+            this.NUDE_CMEDIDOR.Location = new System.Drawing.Point(32, 65);
+            this.NUDE_CMEDIDOR.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.NUDE_CMEDIDOR.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_CMEDIDOR.Name = "NUDE_CMEDIDOR";
+            this.NUDE_CMEDIDOR.Size = new System.Drawing.Size(212, 22);
+            this.NUDE_CMEDIDOR.TabIndex = 17;
+            this.NUDE_CMEDIDOR.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // E_PANTALLA_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1777,6 +1873,9 @@
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TBASICA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCANIO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCMES)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTEG)).EndInit();
@@ -1795,6 +1894,10 @@
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TINT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TEXC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CONSUMOKWH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CMEDIDOR)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1856,8 +1959,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox CMBE_TCANIO;
-        private System.Windows.Forms.ComboBox CMBE_TCMES;
         private System.Windows.Forms.ComboBox CMBE_TCSERVICIO;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
@@ -1865,16 +1966,11 @@
         private System.Windows.Forms.Button BTNE_ARCHIVOT;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button BTNE_CTARIFA;
-        private System.Windows.Forms.TextBox TXTE_TEXC;
-        private System.Windows.Forms.TextBox TXTE_TINT;
-        private System.Windows.Forms.TextBox TXTE_TBASICA;
         private System.Windows.Forms.Button BTNE_ARCHIVOC;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Button BTNE_CCONSUMO;
-        private System.Windows.Forms.TextBox TXTE_CONSUMOKWH;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox TXTE_CMEDIDOR;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button BTNE_RGCSV;
         private System.Windows.Forms.Button BTNE_RGPDF;
@@ -1951,5 +2047,12 @@
         private System.Windows.Forms.DateTimePicker DTPE_FECHACONSUMO;
         private System.Windows.Forms.Button BTNE_ACTUALIZAR;
         private System.Windows.Forms.Button BTNE_LIMPIAR;
+        private System.Windows.Forms.NumericUpDown NUDE_TCMES;
+        private System.Windows.Forms.NumericUpDown NUDE_TCANIO;
+        private System.Windows.Forms.NumericUpDown NUDE_TBASICA;
+        private System.Windows.Forms.NumericUpDown NUDE_TEXC;
+        private System.Windows.Forms.NumericUpDown NUDE_TINT;
+        private System.Windows.Forms.NumericUpDown NUDE_CMEDIDOR;
+        private System.Windows.Forms.NumericUpDown NUDE_CONSUMOKWH;
     }
 }

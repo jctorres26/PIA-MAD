@@ -27,6 +27,8 @@ namespace BD_MAD_CEE.EMPLEADO
         private bool loaded = false;
         private int  idEmpleadoActual;
         private DataTable clientes;
+        private int pBasico = 150;
+        private int pIntermedio = 100;
        
 
         private void E_PANTALLA_PRINCIPAL_Load(object sender, EventArgs e)
@@ -35,6 +37,9 @@ namespace BD_MAD_CEE.EMPLEADO
             CMBE_TIPOS.Items.Add("Industrial");
             CMBE_GENERO.Items.Add("Masculino");
             CMBE_GENERO.Items.Add("Femenino");
+            CMBE_TCSERVICIO.Items.Add("Domestico");
+            CMBE_TCSERVICIO.Items.Add("Industrial");
+            CMBE_TCSERVICIO.SelectedIndex = 0;
             LoadCombo();
             loaded = true;
         }
@@ -263,6 +268,112 @@ namespace BD_MAD_CEE.EMPLEADO
 
         }
 
-        
+        private void BTNE_CTARIFA_Click(object sender, EventArgs e)
+        {
+           bool addTarifa = true;
+
+            EnlaceDB con = EnlaceDB.getInstance();
+
+           
+
+           DataTable tarifas = con.sp_GetDataTable("SelectTarifas");
+            foreach (DataRow row in tarifas.Rows)
+            {
+                if (row["Anio"].ToString() == NUDE_TCANIO.Value.ToString() && row["Mes"].ToString() == NUDE_TCMES.Value.ToString()
+                    && row["Tipo_Servicio"].ToString() == CMBE_TCSERVICIO.Text)
+                {
+                    MessageBox.Show("Ya existe una tarifa para esa fecha y tipo de servicio", "Tarifas y Consumos", MessageBoxButtons.OK);
+                     addTarifa = false;
+                }
+            }
+
+            if(addTarifa == true)
+            {
+                con.sp_Tarifas("Insert", 0, (int)NUDE_TCANIO.Value, (int)NUDE_TCMES.Value, CMBE_TCSERVICIO.Text, (float)NUDE_TBASICA.Value,
+              (float)NUDE_TINT.Value, (float)NUDE_TEXC.Value, idEmpleadoActual);
+            }
+
+        }
+
+        private void BTNE_CCONSUMO_Click(object sender, EventArgs e)
+        {
+            int idClienteContrato;
+            bool medidorExist = false;
+            bool tarifaExist = false;
+            string tipoServicioContrato = "";
+            EnlaceDB con = EnlaceDB.getInstance();
+
+            DataTable contratos = con.sp_GetDataTable("SelectContrato");
+
+            foreach (DataRow row in contratos.Rows)
+            {
+                int medidor = Int32.Parse(row["Numero_Medidor"].ToString());
+               
+                if (medidor==(int)NUDE_CMEDIDOR.Value)
+                {
+                    medidorExist = true;
+                    idClienteContrato = Int32.Parse(row["id_Cliente"].ToString());
+                    tipoServicioContrato = row["Tipo_Servicio"].ToString();
+                }
+            }
+
+            if (medidorExist == false)
+            {
+                MessageBox.Show("El numero de medidor no existe", "Tarifas y Consumos", MessageBoxButtons.OK);
+            }
+
+            int anio = Int32.Parse(DTPE_FECHACONSUMO.Value.ToString("yyyy"));
+            int mes = Int32.Parse(DTPE_FECHACONSUMO.Value.ToString("MM"));
+            DataTable tarifas = con.sp_GetDataTable("SelectTarifas");
+            foreach (DataRow row in tarifas.Rows)
+            {
+                if(row["Anio"].ToString() == anio.ToString() && row["Mes"].ToString()==mes.ToString()
+                    && row["Tipo_Servicio"].ToString()==tipoServicioContrato)
+                {
+                    tarifaExist = true;
+                }
+
+            }
+
+            if(tarifaExist == false)
+            {
+                MessageBox.Show("No existe tarifa para esta fecha y tipo de servicio", "Tarifas y Consumos", MessageBoxButtons.OK);
+            }
+
+            //COMPROBAR QUE NO EXISTA YA ESE CONSUMO PARA ESE NUMERO DE MEDIDOR Y ANIO Y MES
+
+
+            if(tarifaExist == true && medidorExist == true)
+            {
+                int consumoTotal = (int)NUDE_CONSUMOKWH.Value;
+                int consumoBasico = 0;
+                int consumoIntermedio = 0;
+                int consumoExcedente = 0;
+
+                if (consumoTotal >= 250)
+                {
+                    consumoBasico = pBasico;
+                    consumoIntermedio = pIntermedio;
+                    consumoExcedente = consumoTotal - 250;
+                }
+                else if (consumoTotal < 250 && consumoTotal >=150)
+                {
+                    consumoBasico = pBasico;
+                    consumoIntermedio = consumoTotal - pBasico;
+                    consumoExcedente = 0;
+                }
+                else if (consumoTotal < 150)
+                {
+                    consumoBasico = consumoTotal;
+                    consumoIntermedio = 0;
+                    consumoExcedente = 0;
+                }
+
+                con.sp_Consumos("Insert",0,(int)NUDE_CMEDIDOR.Value,DTPE_FECHACONSUMO.Value.ToString("yyyyMMdd"),(int)NUDE_CONSUMOKWH.Value,
+                    consumoBasico, consumoIntermedio, consumoExcedente, idEmpleadoActual);
+                //INSERTAR RECIBO AQUI
+            }
+
+        }
     }
 }

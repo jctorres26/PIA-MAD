@@ -73,7 +73,7 @@ Restricciones: En el numero de medidor, numero exterior y CP solo se permitirá e
 
 
 CREATE TABLE Tarifas (
-id_Tarifa				UNIQUEIDENTIFIER NOT NULL, 
+id_Tarifa				INT IDENTITY (1,1) NOT NULL, 
 Anio INT NOT NULL,
 Mes INT NOT NULL,
 Tipo_Servicio				VARCHAR (10) NOT NULL,  
@@ -85,10 +85,10 @@ PRIMARY KEY (id_Tarifa)
 );
 
 Restricciones: En básico, intermedio y excedente pueden existir números con decimal pero no negativos.
-
+DROP TABLE Tarifas;
 
 CREATE TABLE Consumos (
-id_Consumo				UNIQUEIDENTIFIER NOT NULL,
+id_Consumo				INT IDENTITY (1,1) NOT NULL,
 Numero_Medidor			INT NOT NULL, 
 Fecha					DATE, 
 Consumo				INT, 
@@ -99,17 +99,19 @@ id_Empleado				INT NOT NULL,
 PRIMARY KEY (id_Consumo)
 );
 
+DROP TABLE Consumos;
+
 Restricciones: En básico, intermedio y excedente solo se permitirán números enteros.
 
 
 CREATE TABLE Recibos (
-id_Recibo				UNIQUEIDENTIFIER NOT NULL, 
+id_Recibo				INT IDENTITY(1,1) NOT NULL, 
 Numero_Servicio 			INT NOT NULL, 
 Numero_Medidor			INT NOT NULL, 
 Fecha					DATE NOT NULL, 
 Estatus				VARCHAR(20) NOT NULL, 
-id_Consumo				UNIQUEIDENTIFIER NOT NULL, 
-id_Tarifa				UNIQUEIDENTIFIER NOT NULL, 
+id_Consumo				INT NOT NULL, 
+id_Tarifa				INT NOT NULL, 
 Subtotal_Basico			MONEY, 
 Subtotal_Intermedio			MONEY, 
 Subtotal_Excedente			MONEY, 
@@ -121,6 +123,7 @@ id_Cliente				INT NOT NULL,
 PRIMARY KEY (id_Recibo)
 );
 
+DROP TABLE Recibos;
 
 -LLAVES FORANEAS
 

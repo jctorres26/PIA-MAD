@@ -37,6 +37,21 @@ SELECT id_Cliente, Nombre_Usuario, Contrasenia FROM Clientes WHERE Eliminado = 0
 
 END
 
+IF @Opc = 'SelectTarifas'
+BEGIN
+
+SELECT id_Tarifa, Anio, Mes, Tipo_Servicio FROM Tarifas;
+
+END
+
+
+IF @Opc = 'SelectContrato'
+BEGIN
+
+SELECT Numero_Medidor, id_Cliente, Tipo_Servicio FROM Contrato_Servicio;
+
+END
+
 
 END
 GO

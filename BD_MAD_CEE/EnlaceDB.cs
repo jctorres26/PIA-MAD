@@ -311,5 +311,103 @@ namespace BD_MAD_CEE
 
         }
 
+
+        public void sp_Tarifas(string opc, int idTarifa, int anio, int mes, string tipoServ, float basico, float intermedio,
+            float excedente, int idEmpleado)
+        {
+            try
+            {
+                conectar();
+                string qry = "sp_Tarifas";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@id_Tarifa", SqlDbType.Int);
+                parametro2.Value = idTarifa;
+                var parametro3 = _comando.Parameters.Add("@Anio", SqlDbType.Int);
+                parametro3.Value = anio;
+                var parametro4 = _comando.Parameters.Add("@Mes", SqlDbType.Int);
+                parametro4.Value = mes;
+                var parametro5 = _comando.Parameters.Add("@Tipo_Servicio", SqlDbType.VarChar, 10);
+                parametro5.Value = tipoServ;
+                var parametro6 = _comando.Parameters.Add("@Basico", SqlDbType.Money);
+                parametro6.Value = basico;
+                var parametro7 = _comando.Parameters.Add("@Intermedio", SqlDbType.Money);
+                parametro7.Value = intermedio;
+                var parametro8 = _comando.Parameters.Add("@Excedente", SqlDbType.Money);
+                parametro8.Value = excedente;
+                var parametro9 = _comando.Parameters.Add("@Id_Empleado", SqlDbType.Int);
+                parametro9.Value = idEmpleado;
+             
+
+
+                _adaptador.InsertCommand = _comando;
+                _comando.ExecuteNonQuery();
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+        }
+
+
+        public void sp_Consumos(string opc, int idConsumo, int numMed, string fecha, int consumo, int basico, int intermedio,
+           int excedente, int idEmpleado)
+        {
+            try
+            {
+                conectar();
+                string qry = "sp_Consumos";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@id_Consumo", SqlDbType.Int);
+                parametro2.Value = idConsumo;
+                var parametro3 = _comando.Parameters.Add("@Numero_Medidor", SqlDbType.Int);
+                parametro3.Value = numMed;
+                var parametro4 = _comando.Parameters.Add("@Fecha", SqlDbType.VarChar,10);
+                parametro4.Value = fecha;
+                var parametro5 = _comando.Parameters.Add("@Consumo", SqlDbType.Int);
+                parametro5.Value = consumo;
+                var parametro6 = _comando.Parameters.Add("@Basico", SqlDbType.Int);
+                parametro6.Value = basico;
+                var parametro7 = _comando.Parameters.Add("@Intermedio", SqlDbType.Int);
+                parametro7.Value = intermedio;
+                var parametro8 = _comando.Parameters.Add("@Excedente", SqlDbType.Int);
+                parametro8.Value = excedente;
+                var parametro9 = _comando.Parameters.Add("@id_Empleado", SqlDbType.Int);
+                parametro9.Value = idEmpleado;
+
+
+
+                _adaptador.InsertCommand = _comando;
+                _comando.ExecuteNonQuery();
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+        }
+
     }
 }
