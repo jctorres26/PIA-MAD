@@ -108,18 +108,22 @@ CREATE TABLE Recibos (
 id_Recibo				INT IDENTITY(1,1) NOT NULL, 
 Numero_Servicio 			INT NOT NULL, 
 Numero_Medidor			INT NOT NULL, 
-Fecha					DATE NOT NULL, 
+Fecha					DATE NOT NULL,
+Fecha_Inicio            DATE NOT NULL, 
 Estatus				VARCHAR(20) NOT NULL, 
 id_Consumo				INT NOT NULL, 
 id_Tarifa				INT NOT NULL, 
 Subtotal_Basico			MONEY, 
 Subtotal_Intermedio			MONEY, 
 Subtotal_Excedente			MONEY, 
+Total                     MONEY,
+IVA                       MONEY,
 Importe				MONEY, 
 Cantidad_Pagada			MONEY, 
 Pendiente_Pago			MONEY, 
 id_Empleado 				INT, 
 id_Cliente				INT NOT NULL,
+Generado            BIT DEFAULT 0,
 PRIMARY KEY (id_Recibo)
 );
 

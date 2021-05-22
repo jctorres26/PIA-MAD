@@ -48,7 +48,14 @@ END
 IF @Opc = 'SelectContrato'
 BEGIN
 
-SELECT Numero_Medidor, id_Cliente, Tipo_Servicio FROM Contrato_Servicio;
+SELECT Numero_Medidor, id_Cliente, Tipo_Servicio, Numero_Servicio FROM Contrato_Servicio;
+
+END
+
+IF @Opc = 'SelectConsumos'
+BEGIN
+
+SELECT Numero_Medidor, DatePart(Year,Fecha) AS [Anio], DATEPART(Month,Fecha) AS [Mes] FROM Consumos;
 
 END
 

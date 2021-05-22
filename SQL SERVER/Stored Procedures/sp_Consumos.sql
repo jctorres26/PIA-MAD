@@ -26,3 +26,4 @@ END
 
 
 SELECT* FROM Consumos;
+DELETE FROM Consumos WHERE id_Consumo = 6;

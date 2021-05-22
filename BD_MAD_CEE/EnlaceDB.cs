@@ -409,5 +409,78 @@ namespace BD_MAD_CEE
 
         }
 
+        public void sp_Recibos(string opc, int idRecibo, int numServ, int numMed, string fecha, string fechaInicio
+            ,string estatus, int idConsumo, int idTarifa, float subBasico, float subIntermedio, float subExcedente, float total,
+            float iva, float importe, float cantPagada, float pendiente, int idEmpleado, int idCliente, int generado)
+        {
+            try
+            {
+                conectar();
+                string qry = "sp_Recibos";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@id_Recibo", SqlDbType.Int);
+                parametro2.Value = idRecibo;
+                var parametro3 = _comando.Parameters.Add("@Numero_Servicio", SqlDbType.Int);
+                parametro3.Value = numServ;
+                var parametro4 = _comando.Parameters.Add("@Numero_Medidor", SqlDbType.Int);
+                parametro4.Value = numMed;
+                var parametro5 = _comando.Parameters.Add("@Fecha", SqlDbType.VarChar, 10);
+                parametro5.Value = fecha;
+                var parametro6 = _comando.Parameters.Add("@Fecha_Inicio", SqlDbType.VarChar, 10);
+                parametro6.Value = fechaInicio;
+                var parametro7 = _comando.Parameters.Add("@Estatus", SqlDbType.VarChar, 20);
+                parametro7.Value = estatus;
+                var parametro8 = _comando.Parameters.Add("@id_Consumo", SqlDbType.Int);
+                parametro8.Value = idConsumo;
+                var parametro9 = _comando.Parameters.Add("@id_Tarifa", SqlDbType.Int);
+                parametro9.Value = idTarifa;
+                var parametro10 = _comando.Parameters.Add("@Subtotal_Basico", SqlDbType.Money);
+                parametro10.Value = subBasico;
+                var parametro11 = _comando.Parameters.Add("@Subtotal_Intermedio", SqlDbType.Money);
+                parametro11.Value = subIntermedio;
+                var parametro12 = _comando.Parameters.Add("@Subtotal_Excedente", SqlDbType.Money);
+                parametro12.Value = subExcedente;
+                var parametro13 = _comando.Parameters.Add("@Total", SqlDbType.Money);
+                parametro13.Value = total;
+                var parametro14 = _comando.Parameters.Add("@IVA", SqlDbType.Money);
+                parametro14.Value = iva;
+                var parametro15 = _comando.Parameters.Add("@Importe", SqlDbType.Money);
+                parametro15.Value = importe;
+                var parametro16 = _comando.Parameters.Add("@Cantidad_Pagada", SqlDbType.Money);
+                parametro16.Value = cantPagada;
+                var parametro17 = _comando.Parameters.Add("@Pendiente_Pago", SqlDbType.Money);
+                parametro17.Value = pendiente;
+                var parametro18 = _comando.Parameters.Add("@id_Empleado", SqlDbType.Int);
+                parametro18.Value = idEmpleado;
+                var parametro19 = _comando.Parameters.Add("@id_Cliente", SqlDbType.Int);
+                parametro19.Value = idCliente;
+                var parametro20 = _comando.Parameters.Add("@Generado", SqlDbType.Bit);
+                parametro20.Value = generado;
+
+
+
+
+
+                _adaptador.InsertCommand = _comando;
+                _comando.ExecuteNonQuery();
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+        }
+
     }
 }
