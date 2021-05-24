@@ -25,5 +25,3 @@ END
 END
 
 
-DELETE FROM Tarifas WHERE id_Tarifa = 15;
-SELECT * FROM Tarifas ORDER BY Tipo_Servicio, Anio;

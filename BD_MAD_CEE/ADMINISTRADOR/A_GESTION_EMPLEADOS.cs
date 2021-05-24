@@ -147,6 +147,8 @@ namespace BD_MAD_CEE.ADMINISTRADOR
                 con.sp_Empleados("Restablecer", id, TEXTA_NOMBRES.Text, TEXTA_AP.Text, TEXTA_AM.Text, TEXTA_USUARIO.Text, TEXTA_CLAVE.Text,
                                     TEXTA_RFC.Text, TEXTA_CURP.Text, DTP_FNAC.Value.ToString("yyyyMMdd"), 1, 1, adminActual);
 
+                MessageBox.Show("Usuario Restablecido.", "Gestion de Empleados", MessageBoxButtons.OK);
+
             }
 
         }

@@ -28,6 +28,6 @@ END
 END
 
 GO
-SELECT * FROM vReporteConsumoHistorico;
-SELECT Mes FROM vReporteConsumoHistorico;
+
+
 

@@ -65,9 +65,3 @@ END
 END
 
 SELECT * FROM Recibos;
-DELETE  FROM Recibos;
-UPDATE Recibos SET Generado =0;
-
-UPDATE Recibos SET Cantidad_Pagada = 0;
-
-UPDATE Recibos SET Subtotal_Basico =  dbo.getSubtotalBasico(8,6) WHERE id_Recibo = 1;

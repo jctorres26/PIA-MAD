@@ -30,6 +30,7 @@ namespace BD_MAD_CEE.EMPLEADO
 
         private bool loaded = false;
         private int  idEmpleadoActual;
+        private bool medidorExist = false;
         private DataTable clientes;
         private DataTable recibo;
         private int pBasico = 150;
@@ -38,7 +39,10 @@ namespace BD_MAD_CEE.EMPLEADO
         private DataTable reporteCH;
         private DataTable reporteT;
         private DataTable reporteC;
-
+        private DataTable contrato;
+        private bool bCliente = false;
+        private bool bContrato = false;
+        private string usuarioCliente;
 
 
         private void E_PANTALLA_PRINCIPAL_Load(object sender, EventArgs e)
@@ -92,30 +96,42 @@ namespace BD_MAD_CEE.EMPLEADO
             if ((TXTE_NOMBRES.Text != "") && (TXTE_AP.Text != "") && (TXTE_AM.Text != "") && (TXTE_USUARIO.Text != "")
                && (TXTE_CURP.Text != "") && (TXTE_EMAIL.Text != "") && (TXTE_CLAVE.Text != "") && (CMBE_GENERO.Text != "")
                && (TXTE_ESTADO.Text != "") && (CMBE_TIPOS.Text != "") && (TXTE_CIUDAD.Text != "") && (TXTE_COLONIA.Text != "")
-               && (TXTE_CALLE.Text != "") && (TXTE_NUMCASA.Text != "") && (TXTE_CP.Text != "") && (TXTE_MEDIDOR.Text != "")
+               && (TXTE_CALLE.Text != "") && (NUDE_NUMCASA.Value != 0) && (TXTE_CP.Text != "") && (NUDE_MEDIDOR.Value != 0)
                && CMBE_CLIENTES.SelectedIndex == -1)
             {
                 EnlaceDB con = EnlaceDB.getInstance();
+                medidorExist = false;
+                contrato = con.sp_GetDataTable("SelectContrato");
 
-                int numServ = Int32.Parse(TXTE_MEDIDOR.Text);
+                foreach(DataRow row in contrato.Rows)
+                {
+                    if(Int32.Parse(row["Numero_Medidor"].ToString()) == (int)NUDE_MEDIDOR.Value)
+                    {
+                        MessageBox.Show("Ya existe el numero de medidor. Favor de ingresar otro", "Gestion de Clientes", MessageBoxButtons.OK);
+                        medidorExist = true;
+                    }
+                }
+
+               
                 int cp = Int32.Parse(TXTE_CP.Text);
-                int numExt = Int32.Parse(TXTE_NUMCASA.Text);
+
+                if (medidorExist == false)
+                {
+                     bCliente = con.sp_Clientes("Insert", 0, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
+                                        TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
+
+                     bContrato = con.sp_Contrato("Insert", 0, (int)NUDE_MEDIDOR.Value, CMBE_TIPOS.Text, 0, idEmpleadoActual, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text, TXTE_COLONIA.Text,
+                                       TXTE_CALLE.Text, (int)NUDE_NUMCASA.Value);
+
+                    MessageBox.Show("Nuevo Contrato Registrado", "Gestion de Clientes", MessageBoxButtons.OK);
+                     usuarioCliente = TXTE_USUARIO.Text;
+                    loaded = false;
+                    LimpiarCampos();
+                    LoadCombo();
+                    loaded = true;
+                }
                 
-
-
-                bool bCliente = con.sp_Clientes("Insert", 0, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
-                                    TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
-
-                bool bContrato = con.sp_Contrato("Insert", 0, numServ, CMBE_TIPOS.Text, 0, idEmpleadoActual, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text, TXTE_COLONIA.Text,
-                                   TXTE_CALLE.Text, numExt);
-
-                string usuarioCliente = TXTE_USUARIO.Text;
-
-                loaded = false;
-                LimpiarCampos();
-                LoadCombo();
-                loaded = true;
-
+                
                 if (bCliente == true && bContrato == true)
                 {
                     foreach (DataRow row in clientes.Rows)
@@ -131,7 +147,7 @@ namespace BD_MAD_CEE.EMPLEADO
             else if (((TXTE_NOMBRES.Text == "") || (TXTE_AP.Text != "") || (TXTE_AM.Text != "") || (TXTE_USUARIO.Text != "")
                || (TXTE_CURP.Text == "") || (TXTE_EMAIL.Text != "") && (TXTE_CLAVE.Text != "") || (CMBE_GENERO.Text != "")
                || (TXTE_ESTADO.Text == "") || (CMBE_TIPOS.Text != "") || (TXTE_CIUDAD.Text != "") || (TXTE_COLONIA.Text != "")
-               || (TXTE_CALLE.Text != "") || (TXTE_NUMCASA.Text != "") || (TXTE_CP.Text != "") || (TXTE_MEDIDOR.Text != ""))
+               || (TXTE_CALLE.Text != "") || (NUDE_NUMCASA.Value != 0) || (TXTE_CP.Text != "") || (NUDE_MEDIDOR.Value != 0))
                && CMBE_CLIENTES.SelectedIndex == -1) {
 
                 MessageBox.Show("Favor de llenar todos los campos.", "Gestion de Clientes", MessageBoxButtons.OK);
@@ -139,23 +155,36 @@ namespace BD_MAD_CEE.EMPLEADO
 
 
             else if((TXTE_ESTADO.Text != "") && (CMBE_TIPOS.Text != "") && (TXTE_CIUDAD.Text != "") && (TXTE_COLONIA.Text != "")
-               && (TXTE_CALLE.Text != "") && (TXTE_NUMCASA.Text != "") && (TXTE_CP.Text != "") && (TXTE_MEDIDOR.Text != "")
+               && (TXTE_CALLE.Text != "") && (NUDE_NUMCASA.Value != 0) && (TXTE_CP.Text != "") && (NUDE_MEDIDOR.Value != 0)
                 && CMBE_CLIENTES.SelectedIndex != -1)
             {
                 EnlaceDB con = EnlaceDB.getInstance();
+                contrato = con.sp_GetDataTable("SelectContrato");
+                medidorExist = false;
 
-                int numServ = Int32.Parse(TXTE_MEDIDOR.Text);
+                foreach (DataRow row in contrato.Rows)
+                {
+                    if (Int32.Parse(row["Numero_Medidor"].ToString()) == (int)NUDE_MEDIDOR.Value)
+                    {
+                        MessageBox.Show("Ya existe el numero de medidor. Favor de ingresar otro", "Gestion de Clientes", MessageBoxButtons.OK);
+                        medidorExist = true;
+                    }
+                }
+
                 int cp = Int32.Parse(TXTE_CP.Text);
-                int numExt = Int32.Parse(TXTE_NUMCASA.Text);
                 int idCliente = Int32.Parse(CMBE_CLIENTES.SelectedValue.ToString());
+                if (medidorExist == false)
+                {
+                    con.sp_Contrato("InsertNuevo", 0, (int)NUDE_MEDIDOR.Value, CMBE_TIPOS.Text, idCliente, idEmpleadoActual, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text,
+                        TXTE_COLONIA.Text, TXTE_CALLE.Text, (int)NUDE_NUMCASA.Value);
 
-                con.sp_Contrato("InsertNuevo", 0, numServ, CMBE_TIPOS.Text, idCliente, idEmpleadoActual, cp, TXTE_ESTADO.Text, TXTE_CIUDAD.Text,
-                    TXTE_COLONIA.Text, TXTE_CALLE.Text, numExt);
+                    MessageBox.Show("Nuevo Contrato Registrado", "Gestion de Clientes", MessageBoxButtons.OK);
 
-                loaded = false;
-                LimpiarCampos();
-                LoadCombo();
-                loaded = true;
+                    loaded = false;
+                    LimpiarCampos();
+                    LoadCombo();
+                    loaded = true;
+                }
 
             }
             else
@@ -215,9 +244,9 @@ namespace BD_MAD_CEE.EMPLEADO
             TXTE_CIUDAD.Text = "";
             TXTE_COLONIA.Text = "";
             TXTE_CALLE.Text = "";
-            TXTE_NUMCASA.Text = "";
+            NUDE_NUMCASA.Value = 1;
             TXTE_CP.Text = "";
-            TXTE_MEDIDOR.Text = "";
+            NUDE_MEDIDOR.Value = 1;
 
         }
 
@@ -238,6 +267,8 @@ namespace BD_MAD_CEE.EMPLEADO
 
                 con.sp_Clientes("Restablecer", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
                                         TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
+
+                MessageBox.Show("Usuario Restablecido.", "Gestion de Clientes", MessageBoxButtons.OK);
             }
             
         }
@@ -252,6 +283,7 @@ namespace BD_MAD_CEE.EMPLEADO
                 con.sp_Clientes("Delete", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
                                         TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
 
+                MessageBox.Show("Cliente Eliminado", "Gestion de Clientes", MessageBoxButtons.OK);
 
                 loaded = false;
                 LimpiarCampos();
@@ -274,6 +306,8 @@ namespace BD_MAD_CEE.EMPLEADO
 
                    bool bCliente= con.sp_Clientes("Update", idCliente, TXTE_NOMBRES.Text, TXTE_AP.Text, TXTE_AM.Text, TXTE_USUARIO.Text, TXTE_CLAVE.Text,
                                             TXTE_EMAIL.Text, CMBE_GENERO.Text, TXTE_CURP.Text, DTPE_FNAC.Value.ToString("yyyyMMdd"), 1, 0);
+
+                    MessageBox.Show("Cliente Actualizado", "Gestion de Clientes", MessageBoxButtons.OK);
 
                     loaded = false;
                     LimpiarCampos();
@@ -320,6 +354,13 @@ namespace BD_MAD_CEE.EMPLEADO
             {
                 con.sp_Tarifas("Insert", 0, (int)NUDE_TCANIO.Value, (int)NUDE_TCMES.Value, CMBE_TCSERVICIO.Text, (float)NUDE_TBASICA.Value,
               (float)NUDE_TINT.Value, (float)NUDE_TEXC.Value, idEmpleadoActual);
+                MessageBox.Show("Tarifa agregada", "Tarifas y Consumos", MessageBoxButtons.OK);
+                NUDE_TCANIO.Value = 2021;
+                NUDE_TCMES.Value = 1;
+                NUDE_TBASICA.Value = (decimal)0.10;
+                NUDE_TINT.Value = (decimal)0.10;
+                NUDE_TEXC.Value = (decimal)0.10;
+
             }
 
         }
@@ -421,11 +462,17 @@ namespace BD_MAD_CEE.EMPLEADO
                 con.sp_Consumos("Insert",0,(int)NUDE_CMEDIDOR.Value,DTPE_FECHACONSUMO.Value.ToString("yyyyMMdd"),(int)NUDE_CONSUMOKWH.Value,
                     consumoBasico, consumoIntermedio, consumoExcedente, idEmpleadoActual);
 
-                    if (tipoServicioContrato == "Domestico") {
+               
+
+                if (tipoServicioContrato == "Domestico") {
                     con.sp_Recibos("Insert", 0, numServicio, (int)NUDE_CMEDIDOR.Value, DTPE_FECHACONSUMO.Value.ToString("yyyyMMdd"),
                         DTPE_FECHACONSUMO.Value.AddMonths(-2).ToString("yyyyMMdd"), "No Pagado", 0, idTarifa, 0, 0,0 , 0, 0, 0, 0, 0,0, idClienteContrato, 0);
                     con.sp_Recibos("CompletarRecibo", 0, numServicio, (int)NUDE_CMEDIDOR.Value, DTPE_FECHACONSUMO.Value.ToString("yyyyMMdd"),
                         DTPE_FECHACONSUMO.Value.AddMonths(-2).ToString("yyyyMMdd"), "No Pagado", 0, idTarifa,0, 0, 0, 0, 0, 0, 0, 0, 0, idClienteContrato, 0);
+
+                    MessageBox.Show("Consumo Cargado", "Tarifas y Consumos", MessageBoxButtons.OK);
+                    NUDE_CMEDIDOR.Value = 1;
+                    NUDE_CONSUMOKWH.Value = 1;
 
                 }
                     else if (tipoServicioContrato == "Industrial")
@@ -433,7 +480,11 @@ namespace BD_MAD_CEE.EMPLEADO
                     con.sp_Recibos("Insert", 0, numServicio, (int)NUDE_CMEDIDOR.Value, DTPE_FECHACONSUMO.Value.ToString("yyyyMMdd"),
                        DTPE_FECHACONSUMO.Value.AddMonths(-1).ToString("yyyyMMdd"), "No Pagado", 0, idTarifa, 0, 0, 0, 0, 0, 0, 0, 0, 0, idClienteContrato, 0);
                     con.sp_Recibos("CompletarRecibo", 0, numServicio, (int)NUDE_CMEDIDOR.Value, DTPE_FECHACONSUMO.Value.ToString("yyyyMMdd"),
-                       DTPE_FECHACONSUMO.Value.AddMonths(-1).ToString("yyyyMMdd"), "No Pagado", 0, idTarifa, 0, 0, 0, 0, 0, 0, 0, 0, 0, idClienteContrato, 0);
+                    DTPE_FECHACONSUMO.Value.AddMonths(-1).ToString("yyyyMMdd"), "No Pagado", 0, idTarifa, 0, 0, 0, 0, 0, 0, 0, 0, 0, idClienteContrato, 0);
+
+                    MessageBox.Show("Consumo Cargado", "Tarifas y Consumos", MessageBoxButtons.OK);
+                    NUDE_CMEDIDOR.Value = 1;
+                    NUDE_CONSUMOKWH.Value = 1;
                 }
             
             }
@@ -593,7 +644,7 @@ namespace BD_MAD_CEE.EMPLEADO
             EnlaceDB con = EnlaceDB.getInstance();
 
             con.sp_GenerarRecibos("Generar", (int)NUDE_RANIO.Value, (int)NUDE_RMES.Value, CMBE_RTIPOS.Text, idEmpleadoActual);
-
+            MessageBox.Show("Recibos Cargados a clientes", "Recibos", MessageBoxButtons.OK);
         }
 
         private void BTNE_GENERARPDF_Click(object sender, EventArgs e)
@@ -1314,6 +1365,11 @@ namespace BD_MAD_CEE.EMPLEADO
             {
                 MessageBox.Show("No hay datos", "Reporte", MessageBoxButtons.OK);
             }
+        }
+
+        private void TXTE_CP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

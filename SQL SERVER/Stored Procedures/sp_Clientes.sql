@@ -62,11 +62,3 @@ END
 END
 
 SELECT * FROM Clientes;
-SELECT TOP 1 id_Cliente FROM Clientes ORDER BY id_Cliente DESC;
-UPDATE Clientes SET Activo =0;
-UPDATE Clientes SET Eliminado =1 WHERE id_Cliente = 10001;
-
-DELETE FROM Clientes WHERE id_Cliente = 10011;
-
-DISABLE TRIGGER tr_DeleteCliente ON Clientes;
-ENABLE TRIGGER tr_DeleteCliente ON Clientes;

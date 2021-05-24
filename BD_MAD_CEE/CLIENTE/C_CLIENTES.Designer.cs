@@ -39,7 +39,6 @@
             this.NUDC_TOTAL = new System.Windows.Forms.NumericUpDown();
             this.TEXTC_CANTP = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.BTN_MASIVO = new System.Windows.Forms.Button();
             this.BTNC_PAGAR = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.CMBC_FORMA = new System.Windows.Forms.ComboBox();
@@ -152,7 +151,6 @@
             this.tabPage2.Controls.Add(this.NUDC_TOTAL);
             this.tabPage2.Controls.Add(this.TEXTC_CANTP);
             this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.BTN_MASIVO);
             this.tabPage2.Controls.Add(this.BTNC_PAGAR);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.CMBC_FORMA);
@@ -210,17 +208,6 @@
             this.label11.Size = new System.Drawing.Size(93, 17);
             this.label11.TabIndex = 20;
             this.label11.Text = "Total a pagar";
-            // 
-            // BTN_MASIVO
-            // 
-            this.BTN_MASIVO.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BTN_MASIVO.Location = new System.Drawing.Point(700, 261);
-            this.BTN_MASIVO.Margin = new System.Windows.Forms.Padding(4);
-            this.BTN_MASIVO.Name = "BTN_MASIVO";
-            this.BTN_MASIVO.Size = new System.Drawing.Size(171, 94);
-            this.BTN_MASIVO.TabIndex = 19;
-            this.BTN_MASIVO.Text = "Pago masivo de los servicios";
-            this.BTN_MASIVO.UseVisualStyleBackColor = false;
             // 
             // BTNC_PAGAR
             // 
@@ -460,7 +447,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox CMBC_PSERVICIOS;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button BTN_MASIVO;
         private System.Windows.Forms.TextBox TEXTC_CANTP;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button CMBC_CHVISUAL;

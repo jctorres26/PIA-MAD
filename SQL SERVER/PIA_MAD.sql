@@ -22,9 +22,7 @@ Usuario_Administrador		VARCHAR (20) NOT NULL
 PRIMARY KEY (id_Empleado)
 );
 
-SELECT * FROM Empleados;
 
-Restricciones: En el nombre y apellidos no se permitirá el ingreso de números
 
 CREATE TABLE Clientes(
 id_Cliente				INT IDENTITY (10000,1) NOT NULL, 
@@ -41,7 +39,7 @@ Activo					BIT DEFAULT 1,
 Eliminado				BIT DEFAULT 0,
 PRIMARY KEY (id_Cliente)
 );
-Restricciones: En el nombre y apellidos no se permitirá el ingreso de números
+
 
 
 CREATE TABLE Gestion_Clientes(
@@ -69,7 +67,7 @@ Numero_Exterior			INT NOT NULL,
 PRIMARY KEY (Numero_Servicio)
 );
 
-Restricciones: En el numero de medidor, numero exterior y CP solo se permitirá el ingreso de números enteros. En estado, ciudad, colonia y calle no se permitirán números.
+
 
 
 CREATE TABLE Tarifas (
@@ -84,8 +82,7 @@ Id_Empleado				INT NOT NULL,
 PRIMARY KEY (id_Tarifa)
 );
 
-Restricciones: En básico, intermedio y excedente pueden existir números con decimal pero no negativos.
-DROP TABLE Tarifas;
+
 
 CREATE TABLE Consumos (
 id_Consumo				INT IDENTITY (1,1) NOT NULL,
@@ -99,9 +96,7 @@ id_Empleado				INT NOT NULL,
 PRIMARY KEY (id_Consumo)
 );
 
-DROP TABLE Consumos;
 
-Restricciones: En básico, intermedio y excedente solo se permitirán números enteros.
 
 
 CREATE TABLE Recibos (
@@ -127,9 +122,9 @@ Generado            BIT DEFAULT 0,
 PRIMARY KEY (id_Recibo)
 );
 
-DROP TABLE Recibos;
 
--LLAVES FORANEAS
+
+
 
 ALTER TABLE Empleados ADD CONSTRAINT FK_EMPLEADOS_ADMIN
 FOREIGN KEY (Usuario_Administrador) REFERENCES Administrador(Nombre_Usuario);

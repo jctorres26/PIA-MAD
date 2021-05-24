@@ -18,6 +18,4 @@ END
 	
 
 GO
-SELECT* FROM Recibos;
-INSERT INTO Recibos(Estatus,Pendiente_Pago) VALUES('No Pagado',200);
-UPDATE Recibos SET Pendiente_Pago = 0 WHERE id_Recibo = 2;
+

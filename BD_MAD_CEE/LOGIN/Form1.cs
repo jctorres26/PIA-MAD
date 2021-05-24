@@ -27,7 +27,7 @@ namespace BD_MAD_CEE
         private int idEmpleadoActual;
         private int idClienteActual;
 
-        public void nada() { }
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -72,8 +72,7 @@ namespace BD_MAD_CEE
 
             else if (CMBL_TIPO.Text == "Empleado")
             {
-                
-                
+                            
 
                 EnlaceDB con = EnlaceDB.getInstance();
 
@@ -224,6 +223,47 @@ namespace BD_MAD_CEE
 
         }
 
-        
+        private void CBL_RECORDAR_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBL_RECORDAR.Checked == true) {
+                if (CMBL_TIPO.Text == "Empleado")
+                {
+                    EnlaceDB con = EnlaceDB.getInstance();
+
+                    DataTable empleados = con.sp_GetDataTable("SelectUsuariosEmpleados");
+
+
+
+                    foreach (DataRow row in empleados.Rows)
+                    {
+                        if (TEXTL_USUARIO.Text == row["Nombre_Usuario"].ToString())
+                        {
+
+                            TEXTL_CLAVE.Text = row["Contrasenia"].ToString();
+                        }
+                    }
+
+                }
+                else if (CMBL_TIPO.Text == "Cliente")
+                {
+                    EnlaceDB con = EnlaceDB.getInstance();
+
+                    DataTable clientes = con.sp_GetDataTable("SelectUsuariosClientes");
+
+
+
+                    foreach (DataRow row in clientes.Rows)
+                    {
+                        if (TEXTL_USUARIO.Text == row["Nombre_Usuario"].ToString())
+                        {
+
+                            TEXTL_CLAVE.Text = row["Contrasenia"].ToString();
+                        }
+                    }
+
+                }
+            }
+
+        }
     }
 }

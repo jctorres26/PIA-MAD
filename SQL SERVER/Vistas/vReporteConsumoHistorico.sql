@@ -11,7 +11,6 @@ ON R.id_Consumo = C.id_Consumo;
 GO
 
 
-SELECT*FROM Recibos;
-SELECT * FROM Consumos;
+
 
 SELECT * FROM vReporteConsumoHistorico;

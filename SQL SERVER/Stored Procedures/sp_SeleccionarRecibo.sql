@@ -32,5 +32,5 @@ END
 
 GO
 
-SELECT * FROM vReciboCompleto;
+
 

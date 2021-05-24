@@ -35,11 +35,11 @@
             this.BTNE_CNUEVO = new System.Windows.Forms.Button();
             this.BTNE_BAJA = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.NUDE_NUMCASA = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_MEDIDOR = new System.Windows.Forms.NumericUpDown();
             this.TXTE_CP = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.TXTE_MEDIDOR = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.TXTE_NUMCASA = new System.Windows.Forms.TextBox();
             this.TXTE_CALLE = new System.Windows.Forms.TextBox();
             this.TXTE_COLONIA = new System.Windows.Forms.TextBox();
             this.TXTE_CIUDAD = new System.Windows.Forms.TextBox();
@@ -153,6 +153,8 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_NUMCASA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_MEDIDOR)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -267,11 +269,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.NUDE_NUMCASA);
+            this.groupBox2.Controls.Add(this.NUDE_MEDIDOR);
             this.groupBox2.Controls.Add(this.TXTE_CP);
             this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.TXTE_MEDIDOR);
             this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.TXTE_NUMCASA);
             this.groupBox2.Controls.Add(this.TXTE_CALLE);
             this.groupBox2.Controls.Add(this.TXTE_COLONIA);
             this.groupBox2.Controls.Add(this.TXTE_CIUDAD);
@@ -292,6 +294,50 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del contrato";
             // 
+            // NUDE_NUMCASA
+            // 
+            this.NUDE_NUMCASA.Location = new System.Drawing.Point(228, 159);
+            this.NUDE_NUMCASA.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.NUDE_NUMCASA.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_NUMCASA.Name = "NUDE_NUMCASA";
+            this.NUDE_NUMCASA.Size = new System.Drawing.Size(172, 22);
+            this.NUDE_NUMCASA.TabIndex = 26;
+            this.NUDE_NUMCASA.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // NUDE_MEDIDOR
+            // 
+            this.NUDE_MEDIDOR.Location = new System.Drawing.Point(39, 212);
+            this.NUDE_MEDIDOR.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.NUDE_MEDIDOR.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_MEDIDOR.Name = "NUDE_MEDIDOR";
+            this.NUDE_MEDIDOR.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_MEDIDOR.TabIndex = 25;
+            this.NUDE_MEDIDOR.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // TXTE_CP
             // 
             this.TXTE_CP.Location = new System.Drawing.Point(416, 159);
@@ -299,6 +345,7 @@
             this.TXTE_CP.Name = "TXTE_CP";
             this.TXTE_CP.Size = new System.Drawing.Size(173, 22);
             this.TXTE_CP.TabIndex = 24;
+            this.TXTE_CP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TXTE_CP_KeyPress);
             // 
             // label18
             // 
@@ -310,14 +357,6 @@
             this.label18.TabIndex = 23;
             this.label18.Text = "C.P";
             // 
-            // TXTE_MEDIDOR
-            // 
-            this.TXTE_MEDIDOR.Location = new System.Drawing.Point(40, 212);
-            this.TXTE_MEDIDOR.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_MEDIDOR.Name = "TXTE_MEDIDOR";
-            this.TXTE_MEDIDOR.Size = new System.Drawing.Size(172, 22);
-            this.TXTE_MEDIDOR.TabIndex = 22;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -327,14 +366,6 @@
             this.label17.Size = new System.Drawing.Size(63, 17);
             this.label17.TabIndex = 21;
             this.label17.Text = "Medidor ";
-            // 
-            // TXTE_NUMCASA
-            // 
-            this.TXTE_NUMCASA.Location = new System.Drawing.Point(228, 159);
-            this.TXTE_NUMCASA.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_NUMCASA.Name = "TXTE_NUMCASA";
-            this.TXTE_NUMCASA.Size = new System.Drawing.Size(172, 22);
-            this.TXTE_NUMCASA.TabIndex = 20;
             // 
             // TXTE_CALLE
             // 
@@ -374,9 +405,9 @@
             this.label16.Location = new System.Drawing.Point(224, 139);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 17);
+            this.label16.Size = new System.Drawing.Size(87, 17);
             this.label16.TabIndex = 15;
-            this.label16.Text = "Nro. casa";
+            this.label16.Text = "Nro. Exterior";
             // 
             // label15
             // 
@@ -547,12 +578,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(560, 139);
+            this.label11.Location = new System.Drawing.Point(532, 137);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 17);
+            this.label11.Size = new System.Drawing.Size(81, 17);
             this.label11.TabIndex = 19;
-            this.label11.Text = "Clave";
+            this.label11.Text = "Contraseña";
             // 
             // label10
             // 
@@ -1728,6 +1759,8 @@
             this.tabPage1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_NUMCASA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_MEDIDOR)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -1809,9 +1842,7 @@
         private System.Windows.Forms.TextBox TXTE_USUARIO;
         private System.Windows.Forms.TextBox TXTE_CP;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox TXTE_MEDIDOR;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox TXTE_NUMCASA;
         private System.Windows.Forms.TextBox TXTE_CALLE;
         private System.Windows.Forms.TextBox TXTE_COLONIA;
         private System.Windows.Forms.TextBox TXTE_CIUDAD;
@@ -1896,5 +1927,7 @@
         private System.Windows.Forms.NumericUpDown NUDE_RANIO;
         private System.Windows.Forms.ComboBox CMBE_RCRNUM;
         private System.Windows.Forms.ComboBox CMBE_RCROPC;
+        private System.Windows.Forms.NumericUpDown NUDE_MEDIDOR;
+        private System.Windows.Forms.NumericUpDown NUDE_NUMCASA;
     }
 }

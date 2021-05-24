@@ -12,6 +12,3 @@ GO
 
 SELECT * FROM vReporteGeneralAmbos;
 
-SELECT Año, Mes,Tipo_Servicio, CAST( ROUND(SUM(Cantidad_Pagada),2)AS MONEY) AS [Total Pagado], 
-CAST(ROUND(SUM(Pendiente_Pago),2)AS MONEY)AS[Total Pendiente de Pago] FROM vReporteGeneralAmbos
-WHERE Año = 2020 GROUP BY Año, Mes, Tipo_Servicio;

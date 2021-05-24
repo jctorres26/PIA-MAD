@@ -39,4 +39,3 @@ END
 END
 
 SELECT * FROM Contrato_Servicio;
-DELETE FROM Contrato_Servicio WHERE Numero_Medidor = 20;

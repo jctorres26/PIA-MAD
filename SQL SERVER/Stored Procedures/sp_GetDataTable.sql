@@ -63,5 +63,4 @@ END
 END
 GO
 
-SELECT * FROM Empleados;
-DELETE FROM Empleados;
+

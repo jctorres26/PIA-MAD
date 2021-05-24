@@ -44,4 +44,3 @@ INNER JOIN Tarifas T ON R.id_Tarifa = T.id_Tarifa
 GO
 
 SELECT * FROM vReciboCompleto;
-DROP VIEW vReciboCompleto;
