@@ -10,14 +10,14 @@ BEGIN
 
 IF @Opc = 'SelectEmpleados'
 BEGIN
-SELECT id_Empleado, Nombre, Apellido_Paterno, Apellido_Materno, Nombre_Usuario, Contrasenia, RFC,CURP, 
+SELECT CONCAT(id_Empleado, ' ', Nombre, ' ',Apellido_Paterno , ' ' ,Apellido_Materno) AS Nombre_Completo, id_Empleado, Nombre, Apellido_Paterno, Apellido_Materno, Nombre_Usuario, Contrasenia, RFC,CURP, 
 						Fecha_Nacimiento,Usuario_Administrador FROM Empleados WHERE Eliminado = 0;
 END
 
 IF @Opc = 'SelectClientes'
 BEGIN
 
-SELECT id_Cliente, Nombre, Apellido_Paterno, Apellido_Materno, Nombre_Usuario, Contrasenia, Email,
+SELECT CONCAT(id_Cliente, ' ', Nombre, ' ',Apellido_Paterno , ' ' ,Apellido_Materno) AS Nombre_Completo, id_Cliente, Nombre, Apellido_Paterno, Apellido_Materno, Nombre_Usuario, Contrasenia, Email,
 Genero, CURP, Fecha_Nacimiento FROM Clientes WHERE Eliminado = 0;
 
 END

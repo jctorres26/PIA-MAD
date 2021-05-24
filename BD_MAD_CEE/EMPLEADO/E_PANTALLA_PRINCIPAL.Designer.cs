@@ -35,8 +35,6 @@
             this.BTNE_CNUEVO = new System.Windows.Forms.Button();
             this.BTNE_BAJA = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.TXTE_NROSERVICIO = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.TXTE_CP = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.TXTE_MEDIDOR = new System.Windows.Forms.TextBox();
@@ -77,6 +75,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.NUDE_CMEDIDOR = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_CONSUMOKWH = new System.Windows.Forms.NumericUpDown();
             this.DTPE_FECHACONSUMO = new System.Windows.Forms.DateTimePicker();
             this.BTNE_ARCHIVOC = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
@@ -85,6 +85,8 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.NUDE_TEXC = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_TINT = new System.Windows.Forms.NumericUpDown();
             this.NUDE_TBASICA = new System.Windows.Forms.NumericUpDown();
             this.NUDE_TCANIO = new System.Windows.Forms.NumericUpDown();
             this.NUDE_TCMES = new System.Windows.Forms.NumericUpDown();
@@ -99,111 +101,89 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.BTNE_RGCSV = new System.Windows.Forms.Button();
+            this.CMBE_RGMES = new System.Windows.Forms.ComboBox();
+            this.NUDE_RGANIO = new System.Windows.Forms.NumericUpDown();
             this.BTNE_RGPDF = new System.Windows.Forms.Button();
             this.BTNE_VISUALIZAR = new System.Windows.Forms.Button();
             this.DGVE_REPORTEG = new System.Windows.Forms.DataGridView();
-            this.nom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.año = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Mes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tot1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CMBE_RGTIPOS = new System.Windows.Forms.ComboBox();
-            this.CMBE_RGMES = new System.Windows.Forms.ComboBox();
-            this.CMBE_RGANIO = new System.Windows.Forms.ComboBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.BTNE_TCCSVC = new System.Windows.Forms.Button();
+            this.BTNE_RTCCVISUALIZAR = new System.Windows.Forms.Button();
+            this.NUDE_RTCCANIO = new System.Windows.Forms.NumericUpDown();
             this.BTNE_TCPDFC = new System.Windows.Forms.Button();
             this.DGVE_REPORTEC = new System.Windows.Forms.DataGridView();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMBE_RTCCANIO = new System.Windows.Forms.ComboBox();
             this.label39 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.BTNE_TCCVST = new System.Windows.Forms.Button();
+            this.BTNE_RTCTVISUALIZAR = new System.Windows.Forms.Button();
+            this.NUDE_RTCTANIO = new System.Windows.Forms.NumericUpDown();
             this.BTNE_TCPDFT = new System.Windows.Forms.Button();
             this.DGVE_REPORTET = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CMBE_RTCTANIO = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.BTNE_CHCSV = new System.Windows.Forms.Button();
+            this.CMBE_REPORTECHNUM = new System.Windows.Forms.ComboBox();
+            this.CMBE_REPORTECHOPC = new System.Windows.Forms.ComboBox();
+            this.NUDE_REPORTECHANIO = new System.Windows.Forms.NumericUpDown();
             this.BTNE_CHPDF = new System.Windows.Forms.Button();
             this.BTNE_CHVISUALIZAR = new System.Windows.Forms.Button();
             this.DGVE_REPORTECH = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.CMBE_CHANIO = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.CMBE_RCRNUM = new System.Windows.Forms.ComboBox();
+            this.CMBE_RCROPC = new System.Windows.Forms.ComboBox();
+            this.NUDE_RCRMES = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_RCRANIO = new System.Windows.Forms.NumericUpDown();
             this.BTNE_GENERARPDF = new System.Windows.Forms.Button();
-            this.CMBE_RCRMES = new System.Windows.Forms.ComboBox();
-            this.CMBE_RCRANIO = new System.Windows.Forms.ComboBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.NUDE_RMES = new System.Windows.Forms.NumericUpDown();
+            this.NUDE_RANIO = new System.Windows.Forms.NumericUpDown();
             this.label42 = new System.Windows.Forms.Label();
             this.BTNE_RCARGA = new System.Windows.Forms.Button();
-            this.CMBE_RANIO = new System.Windows.Forms.ComboBox();
             this.CMBE_RTIPOS = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.CMBE_RMES = new System.Windows.Forms.ComboBox();
-            this.NUDE_TINT = new System.Windows.Forms.NumericUpDown();
-            this.NUDE_TEXC = new System.Windows.Forms.NumericUpDown();
-            this.NUDE_CONSUMOKWH = new System.Windows.Forms.NumericUpDown();
-            this.NUDE_CMEDIDOR = new System.Windows.Forms.NumericUpDown();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CMEDIDOR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CONSUMOKWH)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TEXC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TINT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDE_TBASICA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCANIO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCMES)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RGANIO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTEG)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RTCCANIO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTEC)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RTCTANIO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTET)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_REPORTECHANIO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTECH)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RCRMES)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RCRANIO)).BeginInit();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TINT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TEXC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CONSUMOKWH)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CMEDIDOR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RMES)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RANIO)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -287,8 +267,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.TXTE_NROSERVICIO);
-            this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.TXTE_CP);
             this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.TXTE_MEDIDOR);
@@ -313,24 +291,6 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del contrato";
-            // 
-            // TXTE_NROSERVICIO
-            // 
-            this.TXTE_NROSERVICIO.Location = new System.Drawing.Point(583, 27);
-            this.TXTE_NROSERVICIO.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTE_NROSERVICIO.Name = "TXTE_NROSERVICIO";
-            this.TXTE_NROSERVICIO.Size = new System.Drawing.Size(177, 22);
-            this.TXTE_NROSERVICIO.TabIndex = 26;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(484, 31);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(89, 17);
-            this.label19.TabIndex = 25;
-            this.label19.Text = "Nro. Servicio";
             // 
             // TXTE_CP
             // 
@@ -742,6 +702,50 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Carga de consumos";
             // 
+            // NUDE_CMEDIDOR
+            // 
+            this.NUDE_CMEDIDOR.Location = new System.Drawing.Point(32, 65);
+            this.NUDE_CMEDIDOR.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.NUDE_CMEDIDOR.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_CMEDIDOR.Name = "NUDE_CMEDIDOR";
+            this.NUDE_CMEDIDOR.Size = new System.Drawing.Size(212, 22);
+            this.NUDE_CMEDIDOR.TabIndex = 17;
+            this.NUDE_CMEDIDOR.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // NUDE_CONSUMOKWH
+            // 
+            this.NUDE_CONSUMOKWH.Location = new System.Drawing.Point(32, 171);
+            this.NUDE_CONSUMOKWH.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.NUDE_CONSUMOKWH.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_CONSUMOKWH.Name = "NUDE_CONSUMOKWH";
+            this.NUDE_CONSUMOKWH.Size = new System.Drawing.Size(212, 22);
+            this.NUDE_CONSUMOKWH.TabIndex = 16;
+            this.NUDE_CONSUMOKWH.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // DTPE_FECHACONSUMO
             // 
             this.DTPE_FECHACONSUMO.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -761,8 +765,9 @@
             this.BTNE_ARCHIVOC.Name = "BTNE_ARCHIVOC";
             this.BTNE_ARCHIVOC.Size = new System.Drawing.Size(180, 81);
             this.BTNE_ARCHIVOC.TabIndex = 14;
-            this.BTNE_ARCHIVOC.Text = "Cargar archivo de consumos";
+            this.BTNE_ARCHIVOC.Text = "Cargar desde archivo CSV \"ConsumosCM\"";
             this.BTNE_ARCHIVOC.UseVisualStyleBackColor = false;
+            this.BTNE_ARCHIVOC.Click += new System.EventHandler(this.BTNE_ARCHIVOC_Click);
             // 
             // label30
             // 
@@ -842,6 +847,42 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Carga de tarifas";
             // 
+            // NUDE_TEXC
+            // 
+            this.NUDE_TEXC.DecimalPlaces = 2;
+            this.NUDE_TEXC.Location = new System.Drawing.Point(422, 171);
+            this.NUDE_TEXC.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.NUDE_TEXC.Name = "NUDE_TEXC";
+            this.NUDE_TEXC.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_TEXC.TabIndex = 19;
+            this.NUDE_TEXC.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            // 
+            // NUDE_TINT
+            // 
+            this.NUDE_TINT.DecimalPlaces = 2;
+            this.NUDE_TINT.Location = new System.Drawing.Point(237, 171);
+            this.NUDE_TINT.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.NUDE_TINT.Name = "NUDE_TINT";
+            this.NUDE_TINT.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_TINT.TabIndex = 18;
+            this.NUDE_TINT.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            // 
             // NUDE_TBASICA
             // 
             this.NUDE_TBASICA.DecimalPlaces = 2;
@@ -912,8 +953,9 @@
             this.BTNE_ARCHIVOT.Name = "BTNE_ARCHIVOT";
             this.BTNE_ARCHIVOT.Size = new System.Drawing.Size(180, 81);
             this.BTNE_ARCHIVOT.TabIndex = 14;
-            this.BTNE_ARCHIVOT.Text = "Cargar archivo de tarifas";
+            this.BTNE_ARCHIVOT.Text = "Cargar desde archivo CSV \"TarifasCM\"";
             this.BTNE_ARCHIVOT.UseVisualStyleBackColor = false;
+            this.BTNE_ARCHIVOT.Click += new System.EventHandler(this.BTNE_ARCHIVOT_Click);
             // 
             // label26
             // 
@@ -1008,13 +1050,12 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Controls.Add(this.BTNE_RGCSV);
+            this.tabPage3.Controls.Add(this.CMBE_RGMES);
+            this.tabPage3.Controls.Add(this.NUDE_RGANIO);
             this.tabPage3.Controls.Add(this.BTNE_RGPDF);
             this.tabPage3.Controls.Add(this.BTNE_VISUALIZAR);
             this.tabPage3.Controls.Add(this.DGVE_REPORTEG);
             this.tabPage3.Controls.Add(this.CMBE_RGTIPOS);
-            this.tabPage3.Controls.Add(this.CMBE_RGMES);
-            this.tabPage3.Controls.Add(this.CMBE_RGANIO);
             this.tabPage3.Controls.Add(this.label34);
             this.tabPage3.Controls.Add(this.label31);
             this.tabPage3.Controls.Add(this.label27);
@@ -1025,16 +1066,36 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Reporte General";
             // 
-            // BTNE_RGCSV
+            // CMBE_RGMES
             // 
-            this.BTNE_RGCSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BTNE_RGCSV.Location = new System.Drawing.Point(1000, 262);
-            this.BTNE_RGCSV.Margin = new System.Windows.Forms.Padding(4);
-            this.BTNE_RGCSV.Name = "BTNE_RGCSV";
-            this.BTNE_RGCSV.Size = new System.Drawing.Size(167, 87);
-            this.BTNE_RGCSV.TabIndex = 9;
-            this.BTNE_RGCSV.Text = "Generar CSV";
-            this.BTNE_RGCSV.UseVisualStyleBackColor = false;
+            this.CMBE_RGMES.FormattingEnabled = true;
+            this.CMBE_RGMES.Location = new System.Drawing.Point(238, 52);
+            this.CMBE_RGMES.Margin = new System.Windows.Forms.Padding(4);
+            this.CMBE_RGMES.Name = "CMBE_RGMES";
+            this.CMBE_RGMES.Size = new System.Drawing.Size(160, 24);
+            this.CMBE_RGMES.TabIndex = 18;
+            // 
+            // NUDE_RGANIO
+            // 
+            this.NUDE_RGANIO.Location = new System.Drawing.Point(44, 52);
+            this.NUDE_RGANIO.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.NUDE_RGANIO.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUDE_RGANIO.Name = "NUDE_RGANIO";
+            this.NUDE_RGANIO.Size = new System.Drawing.Size(120, 22);
+            this.NUDE_RGANIO.TabIndex = 17;
+            this.NUDE_RGANIO.Value = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
             // 
             // BTNE_RGPDF
             // 
@@ -1046,6 +1107,7 @@
             this.BTNE_RGPDF.TabIndex = 8;
             this.BTNE_RGPDF.Text = "Generar PDF";
             this.BTNE_RGPDF.UseVisualStyleBackColor = false;
+            this.BTNE_RGPDF.Click += new System.EventHandler(this.BTNE_RGPDF_Click);
             // 
             // BTNE_VISUALIZAR
             // 
@@ -1056,65 +1118,19 @@
             this.BTNE_VISUALIZAR.TabIndex = 7;
             this.BTNE_VISUALIZAR.Text = "Visualizar";
             this.BTNE_VISUALIZAR.UseVisualStyleBackColor = true;
+            this.BTNE_VISUALIZAR.Click += new System.EventHandler(this.BTNE_VISUALIZAR_Click);
             // 
             // DGVE_REPORTEG
             // 
+            this.DGVE_REPORTEG.AllowUserToAddRows = false;
+            this.DGVE_REPORTEG.AllowUserToDeleteRows = false;
             this.DGVE_REPORTEG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVE_REPORTEG.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nom,
-            this.año,
-            this.Mes,
-            this.Tipo,
-            this.tot1,
-            this.totp});
             this.DGVE_REPORTEG.Location = new System.Drawing.Point(44, 117);
             this.DGVE_REPORTEG.Margin = new System.Windows.Forms.Padding(4);
             this.DGVE_REPORTEG.Name = "DGVE_REPORTEG";
             this.DGVE_REPORTEG.RowHeadersWidth = 51;
             this.DGVE_REPORTEG.Size = new System.Drawing.Size(852, 366);
             this.DGVE_REPORTEG.TabIndex = 6;
-            // 
-            // nom
-            // 
-            this.nom.HeaderText = "Nro. Servicio";
-            this.nom.MinimumWidth = 6;
-            this.nom.Name = "nom";
-            this.nom.Width = 125;
-            // 
-            // año
-            // 
-            this.año.HeaderText = "Año";
-            this.año.MinimumWidth = 6;
-            this.año.Name = "año";
-            this.año.Width = 125;
-            // 
-            // Mes
-            // 
-            this.Mes.HeaderText = "Mes";
-            this.Mes.MinimumWidth = 6;
-            this.Mes.Name = "Mes";
-            this.Mes.Width = 125;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo de servicio";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 125;
-            // 
-            // tot1
-            // 
-            this.tot1.HeaderText = "Total Pagado";
-            this.tot1.MinimumWidth = 6;
-            this.tot1.Name = "tot1";
-            this.tot1.Width = 125;
-            // 
-            // totp
-            // 
-            this.totp.HeaderText = "Total pendiente de pago";
-            this.totp.MinimumWidth = 6;
-            this.totp.Name = "totp";
-            this.totp.Width = 125;
             // 
             // CMBE_RGTIPOS
             // 
@@ -1124,24 +1140,6 @@
             this.CMBE_RGTIPOS.Name = "CMBE_RGTIPOS";
             this.CMBE_RGTIPOS.Size = new System.Drawing.Size(160, 24);
             this.CMBE_RGTIPOS.TabIndex = 5;
-            // 
-            // CMBE_RGMES
-            // 
-            this.CMBE_RGMES.FormattingEnabled = true;
-            this.CMBE_RGMES.Location = new System.Drawing.Point(239, 50);
-            this.CMBE_RGMES.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RGMES.Name = "CMBE_RGMES";
-            this.CMBE_RGMES.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_RGMES.TabIndex = 4;
-            // 
-            // CMBE_RGANIO
-            // 
-            this.CMBE_RGANIO.FormattingEnabled = true;
-            this.CMBE_RGANIO.Location = new System.Drawing.Point(44, 50);
-            this.CMBE_RGANIO.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RGANIO.Name = "CMBE_RGANIO";
-            this.CMBE_RGANIO.Size = new System.Drawing.Size(153, 24);
-            this.CMBE_RGANIO.TabIndex = 3;
             // 
             // label34
             // 
@@ -1187,10 +1185,10 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.BTNE_TCCSVC);
+            this.groupBox5.Controls.Add(this.BTNE_RTCCVISUALIZAR);
+            this.groupBox5.Controls.Add(this.NUDE_RTCCANIO);
             this.groupBox5.Controls.Add(this.BTNE_TCPDFC);
             this.groupBox5.Controls.Add(this.DGVE_REPORTEC);
-            this.groupBox5.Controls.Add(this.CMBE_RTCCANIO);
             this.groupBox5.Controls.Add(this.label39);
             this.groupBox5.Location = new System.Drawing.Point(605, 11);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
@@ -1201,16 +1199,38 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Reporte Consumos";
             // 
-            // BTNE_TCCSVC
+            // BTNE_RTCCVISUALIZAR
             // 
-            this.BTNE_TCCSVC.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BTNE_TCCSVC.Location = new System.Drawing.Point(252, 388);
-            this.BTNE_TCCSVC.Margin = new System.Windows.Forms.Padding(4);
-            this.BTNE_TCCSVC.Name = "BTNE_TCCSVC";
-            this.BTNE_TCCSVC.Size = new System.Drawing.Size(167, 87);
-            this.BTNE_TCCSVC.TabIndex = 13;
-            this.BTNE_TCCSVC.Text = "Generar CSV";
-            this.BTNE_TCCSVC.UseVisualStyleBackColor = false;
+            this.BTNE_RTCCVISUALIZAR.Location = new System.Drawing.Point(212, 35);
+            this.BTNE_RTCCVISUALIZAR.Margin = new System.Windows.Forms.Padding(4);
+            this.BTNE_RTCCVISUALIZAR.Name = "BTNE_RTCCVISUALIZAR";
+            this.BTNE_RTCCVISUALIZAR.Size = new System.Drawing.Size(152, 54);
+            this.BTNE_RTCCVISUALIZAR.TabIndex = 14;
+            this.BTNE_RTCCVISUALIZAR.Text = "Visualizar";
+            this.BTNE_RTCCVISUALIZAR.UseVisualStyleBackColor = true;
+            this.BTNE_RTCCVISUALIZAR.Click += new System.EventHandler(this.BTNE_RTCCVISUALIZAR_Click);
+            // 
+            // NUDE_RTCCANIO
+            // 
+            this.NUDE_RTCCANIO.Location = new System.Drawing.Point(27, 52);
+            this.NUDE_RTCCANIO.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.NUDE_RTCCANIO.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUDE_RTCCANIO.Name = "NUDE_RTCCANIO";
+            this.NUDE_RTCCANIO.Size = new System.Drawing.Size(120, 22);
+            this.NUDE_RTCCANIO.TabIndex = 13;
+            this.NUDE_RTCCANIO.Value = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
             // 
             // BTNE_TCPDFC
             // 
@@ -1222,74 +1242,19 @@
             this.BTNE_TCPDFC.TabIndex = 12;
             this.BTNE_TCPDFC.Text = "Generar PDF";
             this.BTNE_TCPDFC.UseVisualStyleBackColor = false;
+            this.BTNE_TCPDFC.Click += new System.EventHandler(this.BTNE_TCPDFC_Click);
             // 
             // DGVE_REPORTEC
             // 
+            this.DGVE_REPORTEC.AllowUserToAddRows = false;
+            this.DGVE_REPORTEC.AllowUserToDeleteRows = false;
             this.DGVE_REPORTEC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVE_REPORTEC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16});
             this.DGVE_REPORTEC.Location = new System.Drawing.Point(12, 123);
             this.DGVE_REPORTEC.Margin = new System.Windows.Forms.Padding(4);
             this.DGVE_REPORTEC.Name = "DGVE_REPORTEC";
             this.DGVE_REPORTEC.RowHeadersWidth = 51;
             this.DGVE_REPORTEC.Size = new System.Drawing.Size(656, 185);
             this.DGVE_REPORTEC.TabIndex = 4;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Año";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 75;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Mes";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 75;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Nro. medidor";
-            this.Column13.MinimumWidth = 6;
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 75;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Kw Basica";
-            this.Column14.MinimumWidth = 6;
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 75;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Kw Intermedio";
-            this.Column15.MinimumWidth = 6;
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 75;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Kw Excedente";
-            this.Column16.MinimumWidth = 6;
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 75;
-            // 
-            // CMBE_RTCCANIO
-            // 
-            this.CMBE_RTCCANIO.FormattingEnabled = true;
-            this.CMBE_RTCCANIO.Location = new System.Drawing.Point(28, 50);
-            this.CMBE_RTCCANIO.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RTCCANIO.Name = "CMBE_RTCCANIO";
-            this.CMBE_RTCCANIO.Size = new System.Drawing.Size(132, 24);
-            this.CMBE_RTCCANIO.TabIndex = 3;
             // 
             // label39
             // 
@@ -1303,10 +1268,10 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.BTNE_TCCVST);
+            this.groupBox6.Controls.Add(this.BTNE_RTCTVISUALIZAR);
+            this.groupBox6.Controls.Add(this.NUDE_RTCTANIO);
             this.groupBox6.Controls.Add(this.BTNE_TCPDFT);
             this.groupBox6.Controls.Add(this.DGVE_REPORTET);
-            this.groupBox6.Controls.Add(this.CMBE_RTCTANIO);
             this.groupBox6.Controls.Add(this.label38);
             this.groupBox6.Location = new System.Drawing.Point(11, 11);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
@@ -1317,16 +1282,38 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Reporte Tarifas";
             // 
-            // BTNE_TCCVST
+            // BTNE_RTCTVISUALIZAR
             // 
-            this.BTNE_TCCVST.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BTNE_TCCVST.Location = new System.Drawing.Point(249, 388);
-            this.BTNE_TCCVST.Margin = new System.Windows.Forms.Padding(4);
-            this.BTNE_TCCVST.Name = "BTNE_TCCVST";
-            this.BTNE_TCCVST.Size = new System.Drawing.Size(167, 87);
-            this.BTNE_TCCVST.TabIndex = 11;
-            this.BTNE_TCCVST.Text = "Generar CSV";
-            this.BTNE_TCCVST.UseVisualStyleBackColor = false;
+            this.BTNE_RTCTVISUALIZAR.Location = new System.Drawing.Point(229, 35);
+            this.BTNE_RTCTVISUALIZAR.Margin = new System.Windows.Forms.Padding(4);
+            this.BTNE_RTCTVISUALIZAR.Name = "BTNE_RTCTVISUALIZAR";
+            this.BTNE_RTCTVISUALIZAR.Size = new System.Drawing.Size(152, 54);
+            this.BTNE_RTCTVISUALIZAR.TabIndex = 13;
+            this.BTNE_RTCTVISUALIZAR.Text = "Visualizar";
+            this.BTNE_RTCTVISUALIZAR.UseVisualStyleBackColor = true;
+            this.BTNE_RTCTVISUALIZAR.Click += new System.EventHandler(this.BTNE_RTCTVISUALIZAR_Click);
+            // 
+            // NUDE_RTCTANIO
+            // 
+            this.NUDE_RTCTANIO.Location = new System.Drawing.Point(25, 52);
+            this.NUDE_RTCTANIO.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.NUDE_RTCTANIO.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUDE_RTCTANIO.Name = "NUDE_RTCTANIO";
+            this.NUDE_RTCTANIO.Size = new System.Drawing.Size(120, 22);
+            this.NUDE_RTCTANIO.TabIndex = 12;
+            this.NUDE_RTCTANIO.Value = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
             // 
             // BTNE_TCPDFT
             // 
@@ -1338,66 +1325,19 @@
             this.BTNE_TCPDFT.TabIndex = 10;
             this.BTNE_TCPDFT.Text = "Generar PDF";
             this.BTNE_TCPDFT.UseVisualStyleBackColor = false;
+            this.BTNE_TCPDFT.Click += new System.EventHandler(this.BTNE_TCPDFT_Click);
             // 
             // DGVE_REPORTET
             // 
+            this.DGVE_REPORTET.AllowUserToAddRows = false;
+            this.DGVE_REPORTET.AllowUserToDeleteRows = false;
             this.DGVE_REPORTET.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVE_REPORTET.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
             this.DGVE_REPORTET.Location = new System.Drawing.Point(8, 123);
             this.DGVE_REPORTET.Margin = new System.Windows.Forms.Padding(4);
             this.DGVE_REPORTET.Name = "DGVE_REPORTET";
             this.DGVE_REPORTET.RowHeadersWidth = 51;
             this.DGVE_REPORTET.Size = new System.Drawing.Size(557, 185);
             this.DGVE_REPORTET.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Año";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 75;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Mes";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 75;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Tarifa basica";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 75;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Tarifa intermedia";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 75;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Tarifa excedente";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 75;
-            // 
-            // CMBE_RTCTANIO
-            // 
-            this.CMBE_RTCTANIO.FormattingEnabled = true;
-            this.CMBE_RTCTANIO.Location = new System.Drawing.Point(28, 50);
-            this.CMBE_RTCTANIO.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RTCTANIO.Name = "CMBE_RTCTANIO";
-            this.CMBE_RTCTANIO.Size = new System.Drawing.Size(132, 24);
-            this.CMBE_RTCTANIO.TabIndex = 1;
             // 
             // label38
             // 
@@ -1412,14 +1352,12 @@
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage5.Controls.Add(this.BTNE_CHCSV);
+            this.tabPage5.Controls.Add(this.CMBE_REPORTECHNUM);
+            this.tabPage5.Controls.Add(this.CMBE_REPORTECHOPC);
+            this.tabPage5.Controls.Add(this.NUDE_REPORTECHANIO);
             this.tabPage5.Controls.Add(this.BTNE_CHPDF);
             this.tabPage5.Controls.Add(this.BTNE_CHVISUALIZAR);
             this.tabPage5.Controls.Add(this.DGVE_REPORTECH);
-            this.tabPage5.Controls.Add(this.textBox22);
-            this.tabPage5.Controls.Add(this.textBox21);
-            this.tabPage5.Controls.Add(this.CMBE_CHANIO);
-            this.tabPage5.Controls.Add(this.label37);
             this.tabPage5.Controls.Add(this.label36);
             this.tabPage5.Controls.Add(this.label35);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
@@ -1429,16 +1367,46 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Consumo historico";
             // 
-            // BTNE_CHCSV
+            // CMBE_REPORTECHNUM
             // 
-            this.BTNE_CHCSV.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BTNE_CHCSV.Location = new System.Drawing.Point(919, 267);
-            this.BTNE_CHCSV.Margin = new System.Windows.Forms.Padding(4);
-            this.BTNE_CHCSV.Name = "BTNE_CHCSV";
-            this.BTNE_CHCSV.Size = new System.Drawing.Size(189, 82);
-            this.BTNE_CHCSV.TabIndex = 9;
-            this.BTNE_CHCSV.Text = "Generar CSV";
-            this.BTNE_CHCSV.UseVisualStyleBackColor = false;
+            this.CMBE_REPORTECHNUM.FormattingEnabled = true;
+            this.CMBE_REPORTECHNUM.Location = new System.Drawing.Point(398, 55);
+            this.CMBE_REPORTECHNUM.Margin = new System.Windows.Forms.Padding(4);
+            this.CMBE_REPORTECHNUM.Name = "CMBE_REPORTECHNUM";
+            this.CMBE_REPORTECHNUM.Size = new System.Drawing.Size(160, 24);
+            this.CMBE_REPORTECHNUM.TabIndex = 20;
+            // 
+            // CMBE_REPORTECHOPC
+            // 
+            this.CMBE_REPORTECHOPC.FormattingEnabled = true;
+            this.CMBE_REPORTECHOPC.Location = new System.Drawing.Point(212, 55);
+            this.CMBE_REPORTECHOPC.Margin = new System.Windows.Forms.Padding(4);
+            this.CMBE_REPORTECHOPC.Name = "CMBE_REPORTECHOPC";
+            this.CMBE_REPORTECHOPC.Size = new System.Drawing.Size(160, 24);
+            this.CMBE_REPORTECHOPC.TabIndex = 19;
+            this.CMBE_REPORTECHOPC.SelectedIndexChanged += new System.EventHandler(this.CMBE_REPORTECHOPC_SelectedIndexChanged);
+            // 
+            // NUDE_REPORTECHANIO
+            // 
+            this.NUDE_REPORTECHANIO.Location = new System.Drawing.Point(43, 56);
+            this.NUDE_REPORTECHANIO.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.NUDE_REPORTECHANIO.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUDE_REPORTECHANIO.Name = "NUDE_REPORTECHANIO";
+            this.NUDE_REPORTECHANIO.Size = new System.Drawing.Size(120, 22);
+            this.NUDE_REPORTECHANIO.TabIndex = 13;
+            this.NUDE_REPORTECHANIO.Value = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
             // 
             // BTNE_CHPDF
             // 
@@ -1450,6 +1418,7 @@
             this.BTNE_CHPDF.TabIndex = 8;
             this.BTNE_CHPDF.Text = "Generar PDF";
             this.BTNE_CHPDF.UseVisualStyleBackColor = false;
+            this.BTNE_CHPDF.Click += new System.EventHandler(this.BTNE_CHPDF_Click);
             // 
             // BTNE_CHVISUALIZAR
             // 
@@ -1460,16 +1429,13 @@
             this.BTNE_CHVISUALIZAR.TabIndex = 7;
             this.BTNE_CHVISUALIZAR.Text = "Visualizar";
             this.BTNE_CHVISUALIZAR.UseVisualStyleBackColor = true;
+            this.BTNE_CHVISUALIZAR.Click += new System.EventHandler(this.BTNE_CHVISUALIZAR_Click);
             // 
             // DGVE_REPORTECH
             // 
+            this.DGVE_REPORTECH.AllowUserToAddRows = false;
+            this.DGVE_REPORTECH.AllowUserToDeleteRows = false;
             this.DGVE_REPORTECH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVE_REPORTECH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
             this.DGVE_REPORTECH.Location = new System.Drawing.Point(43, 143);
             this.DGVE_REPORTECH.Margin = new System.Windows.Forms.Padding(4);
             this.DGVE_REPORTECH.Name = "DGVE_REPORTECH";
@@ -1477,85 +1443,15 @@
             this.DGVE_REPORTECH.Size = new System.Drawing.Size(721, 354);
             this.DGVE_REPORTECH.TabIndex = 6;
             // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Periodo de facturacion";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Consumo kWh";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Importe";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Pago";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Pendiente de pago";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(424, 55);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(167, 22);
-            this.textBox22.TabIndex = 5;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(232, 54);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(167, 22);
-            this.textBox21.TabIndex = 4;
-            // 
-            // CMBE_CHANIO
-            // 
-            this.CMBE_CHANIO.FormattingEnabled = true;
-            this.CMBE_CHANIO.Location = new System.Drawing.Point(43, 54);
-            this.CMBE_CHANIO.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_CHANIO.Name = "CMBE_CHANIO";
-            this.CMBE_CHANIO.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_CHANIO.TabIndex = 3;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(420, 34);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(87, 17);
-            this.label37.TabIndex = 2;
-            this.label37.Text = "Nro. servicio";
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(228, 34);
+            this.label36.Location = new System.Drawing.Point(209, 33);
             this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(90, 17);
+            this.label36.Size = new System.Drawing.Size(81, 17);
             this.label36.TabIndex = 1;
-            this.label36.Text = "Nro. medidor";
+            this.label36.Text = "Buscar por:";
             // 
             // label35
             // 
@@ -1581,14 +1477,13 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.CMBE_RCRNUM);
+            this.groupBox8.Controls.Add(this.CMBE_RCROPC);
+            this.groupBox8.Controls.Add(this.NUDE_RCRMES);
+            this.groupBox8.Controls.Add(this.NUDE_RCRANIO);
             this.groupBox8.Controls.Add(this.BTNE_GENERARPDF);
-            this.groupBox8.Controls.Add(this.CMBE_RCRMES);
-            this.groupBox8.Controls.Add(this.CMBE_RCRANIO);
-            this.groupBox8.Controls.Add(this.textBox24);
-            this.groupBox8.Controls.Add(this.textBox23);
             this.groupBox8.Controls.Add(this.label46);
             this.groupBox8.Controls.Add(this.label45);
-            this.groupBox8.Controls.Add(this.label44);
             this.groupBox8.Controls.Add(this.label43);
             this.groupBox8.Location = new System.Drawing.Point(763, 18);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(4);
@@ -1598,6 +1493,69 @@
             this.groupBox8.TabIndex = 8;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Consulta de recibo";
+            // 
+            // CMBE_RCRNUM
+            // 
+            this.CMBE_RCRNUM.FormattingEnabled = true;
+            this.CMBE_RCRNUM.Location = new System.Drawing.Point(229, 70);
+            this.CMBE_RCRNUM.Margin = new System.Windows.Forms.Padding(4);
+            this.CMBE_RCRNUM.Name = "CMBE_RCRNUM";
+            this.CMBE_RCRNUM.Size = new System.Drawing.Size(160, 24);
+            this.CMBE_RCRNUM.TabIndex = 21;
+            // 
+            // CMBE_RCROPC
+            // 
+            this.CMBE_RCROPC.FormattingEnabled = true;
+            this.CMBE_RCROPC.Location = new System.Drawing.Point(23, 73);
+            this.CMBE_RCROPC.Margin = new System.Windows.Forms.Padding(4);
+            this.CMBE_RCROPC.Name = "CMBE_RCROPC";
+            this.CMBE_RCROPC.Size = new System.Drawing.Size(160, 24);
+            this.CMBE_RCROPC.TabIndex = 20;
+            this.CMBE_RCROPC.SelectedIndexChanged += new System.EventHandler(this.CMBE_RCROPC_SelectedIndexChanged);
+            // 
+            // NUDE_RCRMES
+            // 
+            this.NUDE_RCRMES.Location = new System.Drawing.Point(230, 154);
+            this.NUDE_RCRMES.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.NUDE_RCRMES.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_RCRMES.Name = "NUDE_RCRMES";
+            this.NUDE_RCRMES.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_RCRMES.TabIndex = 20;
+            this.NUDE_RCRMES.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // NUDE_RCRANIO
+            // 
+            this.NUDE_RCRANIO.Location = new System.Drawing.Point(24, 154);
+            this.NUDE_RCRANIO.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.NUDE_RCRANIO.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUDE_RCRANIO.Name = "NUDE_RCRANIO";
+            this.NUDE_RCRANIO.Size = new System.Drawing.Size(120, 22);
+            this.NUDE_RCRANIO.TabIndex = 19;
+            this.NUDE_RCRANIO.Value = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
             // 
             // BTNE_GENERARPDF
             // 
@@ -1609,40 +1567,7 @@
             this.BTNE_GENERARPDF.TabIndex = 8;
             this.BTNE_GENERARPDF.Text = "Generar recibo PDF";
             this.BTNE_GENERARPDF.UseVisualStyleBackColor = false;
-            // 
-            // CMBE_RCRMES
-            // 
-            this.CMBE_RCRMES.FormattingEnabled = true;
-            this.CMBE_RCRMES.Location = new System.Drawing.Point(231, 154);
-            this.CMBE_RCRMES.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RCRMES.Name = "CMBE_RCRMES";
-            this.CMBE_RCRMES.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_RCRMES.TabIndex = 7;
-            // 
-            // CMBE_RCRANIO
-            // 
-            this.CMBE_RCRANIO.FormattingEnabled = true;
-            this.CMBE_RCRANIO.Location = new System.Drawing.Point(24, 154);
-            this.CMBE_RCRANIO.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RCRANIO.Name = "CMBE_RCRANIO";
-            this.CMBE_RCRANIO.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_RCRANIO.TabIndex = 6;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(231, 71);
-            this.textBox24.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(161, 22);
-            this.textBox24.TabIndex = 5;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(24, 73);
-            this.textBox23.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(161, 22);
-            this.textBox23.TabIndex = 4;
+            this.BTNE_GENERARPDF.Click += new System.EventHandler(this.BTNE_GENERARPDF_Click);
             // 
             // label46
             // 
@@ -1664,35 +1589,25 @@
             this.label45.TabIndex = 2;
             this.label45.Text = "Año";
             // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(227, 52);
-            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(90, 17);
-            this.label44.TabIndex = 1;
-            this.label44.Text = "Nro. medidor";
-            // 
             // label43
             // 
             this.label43.AutoSize = true;
             this.label43.Location = new System.Drawing.Point(20, 52);
             this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(87, 17);
+            this.label43.Size = new System.Drawing.Size(81, 17);
             this.label43.TabIndex = 0;
-            this.label43.Text = "Nro. servicio";
+            this.label43.Text = "Buscar por:";
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.NUDE_RMES);
+            this.groupBox7.Controls.Add(this.NUDE_RANIO);
             this.groupBox7.Controls.Add(this.label42);
             this.groupBox7.Controls.Add(this.BTNE_RCARGA);
-            this.groupBox7.Controls.Add(this.CMBE_RANIO);
             this.groupBox7.Controls.Add(this.CMBE_RTIPOS);
             this.groupBox7.Controls.Add(this.label41);
             this.groupBox7.Controls.Add(this.label40);
-            this.groupBox7.Controls.Add(this.CMBE_RMES);
             this.groupBox7.Location = new System.Drawing.Point(11, 18);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox7.Name = "groupBox7";
@@ -1701,6 +1616,50 @@
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Cargar recibos ";
+            // 
+            // NUDE_RMES
+            // 
+            this.NUDE_RMES.Location = new System.Drawing.Point(219, 72);
+            this.NUDE_RMES.Maximum = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            this.NUDE_RMES.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.NUDE_RMES.Name = "NUDE_RMES";
+            this.NUDE_RMES.Size = new System.Drawing.Size(159, 22);
+            this.NUDE_RMES.TabIndex = 19;
+            this.NUDE_RMES.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // NUDE_RANIO
+            // 
+            this.NUDE_RANIO.Location = new System.Drawing.Point(26, 73);
+            this.NUDE_RANIO.Maximum = new decimal(new int[] {
+            2021,
+            0,
+            0,
+            0});
+            this.NUDE_RANIO.Minimum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.NUDE_RANIO.Name = "NUDE_RANIO";
+            this.NUDE_RANIO.Size = new System.Drawing.Size(120, 22);
+            this.NUDE_RANIO.TabIndex = 18;
+            this.NUDE_RANIO.Value = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
             // 
             // label42
             // 
@@ -1721,15 +1680,7 @@
             this.BTNE_RCARGA.TabIndex = 6;
             this.BTNE_RCARGA.Text = "Cargar recibos a clientes";
             this.BTNE_RCARGA.UseVisualStyleBackColor = true;
-            // 
-            // CMBE_RANIO
-            // 
-            this.CMBE_RANIO.FormattingEnabled = true;
-            this.CMBE_RANIO.Location = new System.Drawing.Point(27, 71);
-            this.CMBE_RANIO.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RANIO.Name = "CMBE_RANIO";
-            this.CMBE_RANIO.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_RANIO.TabIndex = 3;
+            this.BTNE_RCARGA.Click += new System.EventHandler(this.BTNE_RCARGA_Click);
             // 
             // CMBE_RTIPOS
             // 
@@ -1760,95 +1711,6 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "Tipo de servicio";
             // 
-            // CMBE_RMES
-            // 
-            this.CMBE_RMES.FormattingEnabled = true;
-            this.CMBE_RMES.Location = new System.Drawing.Point(220, 71);
-            this.CMBE_RMES.Margin = new System.Windows.Forms.Padding(4);
-            this.CMBE_RMES.Name = "CMBE_RMES";
-            this.CMBE_RMES.Size = new System.Drawing.Size(160, 24);
-            this.CMBE_RMES.TabIndex = 4;
-            // 
-            // NUDE_TINT
-            // 
-            this.NUDE_TINT.DecimalPlaces = 2;
-            this.NUDE_TINT.Location = new System.Drawing.Point(237, 171);
-            this.NUDE_TINT.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.NUDE_TINT.Name = "NUDE_TINT";
-            this.NUDE_TINT.Size = new System.Drawing.Size(159, 22);
-            this.NUDE_TINT.TabIndex = 18;
-            this.NUDE_TINT.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            // 
-            // NUDE_TEXC
-            // 
-            this.NUDE_TEXC.DecimalPlaces = 2;
-            this.NUDE_TEXC.Location = new System.Drawing.Point(422, 171);
-            this.NUDE_TEXC.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.NUDE_TEXC.Name = "NUDE_TEXC";
-            this.NUDE_TEXC.Size = new System.Drawing.Size(159, 22);
-            this.NUDE_TEXC.TabIndex = 19;
-            this.NUDE_TEXC.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            // 
-            // NUDE_CONSUMOKWH
-            // 
-            this.NUDE_CONSUMOKWH.Location = new System.Drawing.Point(32, 171);
-            this.NUDE_CONSUMOKWH.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.NUDE_CONSUMOKWH.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDE_CONSUMOKWH.Name = "NUDE_CONSUMOKWH";
-            this.NUDE_CONSUMOKWH.Size = new System.Drawing.Size(212, 22);
-            this.NUDE_CONSUMOKWH.TabIndex = 16;
-            this.NUDE_CONSUMOKWH.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // NUDE_CMEDIDOR
-            // 
-            this.NUDE_CMEDIDOR.Location = new System.Drawing.Point(32, 65);
-            this.NUDE_CMEDIDOR.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.NUDE_CMEDIDOR.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.NUDE_CMEDIDOR.Name = "NUDE_CMEDIDOR";
-            this.NUDE_CMEDIDOR.Size = new System.Drawing.Size(212, 22);
-            this.NUDE_CMEDIDOR.TabIndex = 17;
-            this.NUDE_CMEDIDOR.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
             // E_PANTALLA_PRINCIPAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1871,33 +1733,41 @@
             this.tabPage2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CMEDIDOR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CONSUMOKWH)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TEXC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TINT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDE_TBASICA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCANIO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUDE_TCMES)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RGANIO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTEG)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RTCCANIO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTEC)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RTCTANIO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTET)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_REPORTECHANIO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGVE_REPORTECH)).EndInit();
             this.tabPage6.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RCRMES)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RCRANIO)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TINT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_TEXC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CONSUMOKWH)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDE_CMEDIDOR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RMES)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDE_RANIO)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1937,8 +1807,6 @@
         private System.Windows.Forms.Button BTNE_REESTABLCER;
         private System.Windows.Forms.TextBox TXTE_CLAVE;
         private System.Windows.Forms.TextBox TXTE_USUARIO;
-        private System.Windows.Forms.TextBox TXTE_NROSERVICIO;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox TXTE_CP;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox TXTE_MEDIDOR;
@@ -1972,77 +1840,36 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button BTNE_RGCSV;
         private System.Windows.Forms.Button BTNE_RGPDF;
         private System.Windows.Forms.Button BTNE_VISUALIZAR;
         private System.Windows.Forms.DataGridView DGVE_REPORTEG;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn año;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Mes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tot1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totp;
         private System.Windows.Forms.ComboBox CMBE_RGTIPOS;
-        private System.Windows.Forms.ComboBox CMBE_RGMES;
-        private System.Windows.Forms.ComboBox CMBE_RGANIO;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button BTNE_CHCSV;
         private System.Windows.Forms.Button BTNE_CHPDF;
         private System.Windows.Forms.Button BTNE_CHVISUALIZAR;
         private System.Windows.Forms.DataGridView DGVE_REPORTECH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.ComboBox CMBE_CHANIO;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button BTNE_TCCSVC;
         private System.Windows.Forms.Button BTNE_TCPDFC;
         private System.Windows.Forms.DataGridView DGVE_REPORTEC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.ComboBox CMBE_RTCCANIO;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Button BTNE_TCCVST;
         private System.Windows.Forms.Button BTNE_TCPDFT;
         private System.Windows.Forms.DataGridView DGVE_REPORTET;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.ComboBox CMBE_RTCTANIO;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Button BTNE_RCARGA;
-        private System.Windows.Forms.ComboBox CMBE_RANIO;
         private System.Windows.Forms.ComboBox CMBE_RTIPOS;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.ComboBox CMBE_RMES;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Button BTNE_GENERARPDF;
-        private System.Windows.Forms.ComboBox CMBE_RCRMES;
-        private System.Windows.Forms.ComboBox CMBE_RCRANIO;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox23;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.DateTimePicker DTPE_FECHACONSUMO;
         private System.Windows.Forms.Button BTNE_ACTUALIZAR;
@@ -2054,5 +1881,20 @@
         private System.Windows.Forms.NumericUpDown NUDE_TINT;
         private System.Windows.Forms.NumericUpDown NUDE_CMEDIDOR;
         private System.Windows.Forms.NumericUpDown NUDE_CONSUMOKWH;
+        private System.Windows.Forms.Button BTNE_RTCCVISUALIZAR;
+        private System.Windows.Forms.NumericUpDown NUDE_RTCCANIO;
+        private System.Windows.Forms.Button BTNE_RTCTVISUALIZAR;
+        private System.Windows.Forms.NumericUpDown NUDE_RTCTANIO;
+        private System.Windows.Forms.NumericUpDown NUDE_RGANIO;
+        private System.Windows.Forms.ComboBox CMBE_RGMES;
+        private System.Windows.Forms.NumericUpDown NUDE_REPORTECHANIO;
+        private System.Windows.Forms.ComboBox CMBE_REPORTECHOPC;
+        private System.Windows.Forms.ComboBox CMBE_REPORTECHNUM;
+        private System.Windows.Forms.NumericUpDown NUDE_RCRMES;
+        private System.Windows.Forms.NumericUpDown NUDE_RCRANIO;
+        private System.Windows.Forms.NumericUpDown NUDE_RMES;
+        private System.Windows.Forms.NumericUpDown NUDE_RANIO;
+        private System.Windows.Forms.ComboBox CMBE_RCRNUM;
+        private System.Windows.Forms.ComboBox CMBE_RCROPC;
     }
 }

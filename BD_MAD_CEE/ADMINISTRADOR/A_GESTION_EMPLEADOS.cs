@@ -37,9 +37,9 @@ namespace BD_MAD_CEE.ADMINISTRADOR
         {
             EnlaceDB con = EnlaceDB.getInstance();
 
-            var empleados = con.sp_GetDataTable("SelectEmpleados");
+            DataTable empleados = con.sp_GetDataTable("SelectEmpleados");
             CMBA_EMPLEADOS.DataSource = empleados;
-            CMBA_EMPLEADOS.DisplayMember = "Nombre";
+            CMBA_EMPLEADOS.DisplayMember = "Nombre_Completo";
             CMBA_EMPLEADOS.ValueMember = "id_Empleado";
             CMBA_EMPLEADOS.SelectedIndex = -1;
 

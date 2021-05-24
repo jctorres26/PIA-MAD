@@ -482,5 +482,278 @@ namespace BD_MAD_CEE
 
         }
 
+
+        public DataTable sp_ReportesTC(string opc,int anio)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_ReportesTC";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@Anio", SqlDbType.Int);
+                parametro2.Value = anio;
+
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return table;
+        }
+
+        public DataTable sp_ReporteGeneral(string opc, int anio, int mes)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_ReporteGeneral";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@Anio", SqlDbType.Int);
+                parametro2.Value = anio;
+                var parametro3 = _comando.Parameters.Add("@Mes", SqlDbType.Int);
+                parametro3.Value = mes;
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return table;
+        }
+
+        public DataTable sp_ReporteConsumoHistorico(string opc, int anio, int numMed, int numServ)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_ReporteConsumoHistorico";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@Anio", SqlDbType.Int);
+                parametro2.Value = anio;
+                var parametro3 = _comando.Parameters.Add("@Numero_Medidor", SqlDbType.Int);
+                parametro3.Value = numMed;
+                var parametro4 = _comando.Parameters.Add("@Numero_Servicio", SqlDbType.Int);
+                parametro4.Value = numServ;
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return table;
+        }
+
+        public DataTable sp_GetNumeros(string opc, int idCliente)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_GetNumeros";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@id_Cliente", SqlDbType.Int);
+                parametro2.Value = idCliente;
+             
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return table;
+        }
+
+        public void sp_GenerarRecibos(string opc, int anio, int mes, string tipoServicio, int idEmpleado)
+        {
+            try
+            {
+                conectar();
+                string qry = "sp_GenerarRecibos";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@Anio", SqlDbType.Int);
+                parametro2.Value = anio;
+                var parametro3 = _comando.Parameters.Add("@Mes", SqlDbType.Int);
+                parametro3.Value = mes;
+                var parametro4 = _comando.Parameters.Add("@Tipo_Servicio", SqlDbType.VarChar, 10);
+                parametro4.Value = tipoServicio;
+                var parametro5 = _comando.Parameters.Add("@id_Empleado", SqlDbType.Int);
+                parametro5.Value = idEmpleado;
+
+
+                _adaptador.InsertCommand = _comando;
+                _comando.ExecuteNonQuery();
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+
+        }
+
+        public DataTable sp_SeleccionarRecibo(string opc, int numMed, int numServ, int anio, int mes)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_SeleccionarRecibo";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@Numero_Medidor", SqlDbType.Int);
+                parametro2.Value = numMed;
+                var parametro3 = _comando.Parameters.Add("@Numero_Servicio", SqlDbType.Int);
+                parametro3.Value = numServ;
+                var parametro4 = _comando.Parameters.Add("@Anio", SqlDbType.Int);
+                parametro4.Value = anio;
+                var parametro5 = _comando.Parameters.Add("@Mes", SqlDbType.Int);
+                parametro5.Value = mes;
+
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+            }
+            finally
+            {
+                desconectar();
+            }
+
+            return table;
+        }
+
+
+        public DataTable sp_RecibosClientes(string opc, int idCliente, int numServ)
+        {
+            DataTable table = new DataTable();
+
+            try
+            {
+                conectar();
+                string qry = "sp_RecibosClientes";
+                _comando = new SqlCommand(qry, _conexion);
+                _comando.CommandType = CommandType.StoredProcedure;
+                _comando.CommandTimeout = 1200;
+
+                var parametro1 = _comando.Parameters.Add("@Opc", SqlDbType.VarChar, 30);
+                parametro1.Value = opc;
+                var parametro2 = _comando.Parameters.Add("@id_Cliente", SqlDbType.Int);
+                parametro2.Value = idCliente;
+                var parametro3 = _comando.Parameters.Add("@Numero_Servicio", SqlDbType.Int);
+                parametro3.Value = numServ;
+                
+
+                _adaptador.SelectCommand = _comando;
+                _adaptador.Fill(table);
+
+            }
+            catch (SqlException exc)
+            {
+                string warning = "Ha ocurrido una excepcion en la base de datos \n";
+                warning += exc.Message;
+                MessageBox.Show(warning, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            finally
+            {
+                desconectar();
+            }
+            return table;
+
+        }
+
     }
 }
